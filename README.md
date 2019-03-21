@@ -33,6 +33,7 @@ Insert Here
 
 
 # Sketch/Design Docs of App
+* .\Designs
 
 
 # Project Folder Architecture (MVC layout)
