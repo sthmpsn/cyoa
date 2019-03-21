@@ -1,7 +1,8 @@
 # Web-Dev-Alliance
 Project 2
 
-# Welcome to the exceptional-pirates wiki
+# Project Description
+Insert Here
 
 
 # Resources
@@ -20,10 +21,6 @@ Project 2
 * **Back End:**
 
 * **Database Team:**
-
-
-# Project Description
-Insert Here
 
 # Requirements
 * "Meat and Potatoes" (Requirements)
