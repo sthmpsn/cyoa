@@ -1,7 +1,7 @@
 var score = 5;
 var stress = 5;
 
-//Question 1
+//Watch Youtube or pay attention in class
 
 if ($('.youTube').on('click') = youTube) {
     load video;
@@ -14,7 +14,7 @@ if ($('.VSC')) {
     stress += 1;
 }
 
-//Question 2
+//Blizzard question
 
 var userChoice = $('.answer').on('click').val().trim()
 switch (userChoice) {
@@ -49,7 +49,7 @@ switch (userChoice) {
         break;
 }
 
-//Question 3
+//First group choice
 
 var userChoice = $('.answer').on('click').val().trim()
 switch (userChoice) {
@@ -84,7 +84,7 @@ switch (userChoice) {
         break;
 }
 
-//Question 4
+//Recruiter call
 
 var userChoice = $('.answer').on('click').val().trim()
 switch (userChoice) {
@@ -105,11 +105,11 @@ switch (userChoice) {
         break;
 }
 
-//Question 5
+//Bug fix
 
 //FIX THE BUG
 
-//Question 6
+//Dysentery
 
 var userChoice = $('.answer').on('click').val().trim()
 switch (userChoice) {
@@ -133,6 +133,48 @@ switch (userChoice) {
     case C:
         console.log("Better get to work on that Linked-In");
         score -= 1;
+        stress -= 1;
+        break;
+}
+
+//Spring Break
+
+var userChoice = $('.answer').on('click').val().trim()
+switch (userChoice) {
+    case A:
+        console.log("You learned a lot of new things!");
+        score += 1;
+        stress += 1;
+        break;
+    case B:
+            console.log("You are all up to date, complete with shiny new portfolio");
+            score += 1;
+            stress += 0;
+            break;
+    case C:
+        console.log("What a fun trip!");
+        score -= 0;
+        stress -= 1;
+        break;
+}
+
+//Final project
+
+var userChoice = $('.answer').on('click').val().trim()
+switch (userChoice) {
+    case A:
+        console.log("You nailed it!");
+        score += 2;
+        stress += 2;
+        break;
+    case B:
+            console.log("Perfectly acceptable");
+            score += 1;
+            stress += 1;
+            break;
+    case C:
+        console.log("I hope your portfolio is good enough...");
+        score -= 0;
         stress -= 1;
         break;
 }

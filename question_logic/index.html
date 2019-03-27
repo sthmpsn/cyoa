@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Link Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- Link External Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
 
     <title>Document</title>
 
@@ -19,7 +19,7 @@
     <div class="container">
         <div class=backgroundImage></div>
         <div class="jumbotron">
-            <h1 class="display-2">Muppet Trivia</h1>
+            <h1 class="display-2">CYOA</h1>
             <div class="row">
                 <div class="col">
                     <div class="currentQuestion">
@@ -35,15 +35,76 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
     <!-- Link External JS -->
-    <script src="assets/javascript/app.js"></script>
+    <!-- <script src="questions.js"></script> -->
 
 </body>
+<script>
+var score = 0;
+var stress = 0;
+
+
+    $('.startButton').on('click', function () {
+        startGame();
+        score = 5;
+        stress = 5;
+    });
+
+    
+
+    function startGame() {
+        $('.currentQuestion').html('<h4 class="question">A blizzard has descended on the land. Do you brave the elements or try to learn remotely?');
+        $('.currentQuestion').append('<button id="A" class="answer btn">It is just a little snow!');
+        $('.currentQuestion').append('<br><button id="B" class="answer btn">Better safe than sorry.');
+        $('.currentQuestion').append('<br><button id="C" class="answer btn">Do you want to build a snowman?');
+        $('button').click(function () {
+        var userChoice = this.id;
+        console.log(userChoice);
+        switch (userChoice) {
+            case 'A':
+                var outcome = Math.floor(Math.random());
+                if (outcome = 0) {
+                    console.log("You didn't make it");
+                    score -= 1;
+                    stress += 1;
+                } else {
+                    console.log("You made it");
+                    score += 1;
+                    stress -= 1;
+                }
+                break;
+            case 'B':
+                var outcome = Math.floor(Math.random() * 4);
+                if (outcome = 0) {
+                    console.log("Your internet went out");
+                    score -= 1;
+                    stress += 1;
+                } else {
+                    console.log("You were able to learn");
+                    score += 1;
+                    stress += 1;
+                }
+                break;
+            case 'C':
+                console.log("Nice snowman... man");
+                score -= 1;
+                stress += 1;
+                break;
+        }
+        console.log(score);
+        console.log(stress);
+    });
+}
+    
+</script>
 
 </html>
