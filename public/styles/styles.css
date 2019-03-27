@@ -23,7 +23,7 @@
 
 /* CLASSROOM STYLE */
 
-#classroom {
+.classroom-area {
   background-image: url("../images/classroom-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
