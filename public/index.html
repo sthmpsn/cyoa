@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!--STYLESHEETS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    
+    <!--SCRIPTS-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <title>Choose Your Own Adventure</title>
+
+</head>
+<body id="index">
+
+    <!--MAIN BODY-->
+    <div class="container" id="login">
+        <div class="row">
+            <div class="col text-center text-white">
+                <h1>Choose Your Own Adventure:</h1>
+                <h2>Coding Boot Camp</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center my-3">
+            <div class="col-4">
+                <div class="row">
+                    <!--NEW USER LOGIN-->
+                    <div class="col">
+                        <button class="btn btn-danger btn-block border-white mb-3" type="button" data-toggle="collapse" data-target="#new-user-login" aria-expanded="false" aria-controls="new-user-login">New User</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col collapse text-center text-white" id="new-user-login">
+                        <form>
+                            <div class="form-group">
+                                <label for="new-user-email">Email Address</label>
+                                <input type="email" class="form-control" id="new-user-email" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="new-user-password">Password</label>
+                                <input type="password" class="form-control" id="new-user-password">
+                            </div>
+                            <button type="submit" class="btn btn-secondary btn-block" id="btnSignUp">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <!--RETURNING USER LOGIN-->
+                    <div class="col">
+                        <button class="btn btn-danger btn-block border-white mb-3" type="button" data-toggle="collapse" data-target="#returning-user-login" aria-expanded="false" aria-controls="returning-user-login">Returning User</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col collapse text-center text-white" id="returning-user-login">
+                        <form>
+                            <div class="form-group">
+                                <label for="returning-user-email">Email Address</label>
+                                <input type="email" class="form-control" id="returning-user-email" aria-describedby="emailHelp">
+                            </div>
+                            <div class="form-group">
+                                <label for="returning-user-password">Password</label>
+                                <input type="password" class="form-control" id="returning-user-password">
+                            </div>
+                            <button type="submit" class="btn btn-secondary btn-block" id="btnLogin">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
