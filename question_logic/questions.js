@@ -45,7 +45,7 @@ switch (userChoice) {
     case C:
         console.log("Nice snowman... man");
         score -= 1;
-        score += 1;
+        stress += 1;
         break;
 }
 
@@ -79,6 +79,59 @@ switch (userChoice) {
         break;
     case C:
         console.log("Nice snowman... man");
+        score -= 1;
+        stress -= 1;
+        break;
+}
+
+//Question 4
+
+var userChoice = $('.answer').on('click').val().trim()
+switch (userChoice) {
+    case A:
+        console.log("You had a lovely chat with Mark who said he'll keep you in mind");
+        score += 1;
+        stress += 1;
+        break;
+    case B:
+        console.log("You recieved a form letter saying thank you for your communique");
+        score -= 0;
+        stress += 0;
+        break;
+    case C:
+        console.log("Better get to work on that Linked-In");
+        score -= 1;
+        stress -= 1;
+        break;
+}
+
+//Question 5
+
+//FIX THE BUG
+
+//Question 6
+
+var userChoice = $('.answer').on('click').val().trim()
+switch (userChoice) {
+    case A:
+        console.log("You went to the doctor, you missed 1 class");
+        score -= 1;
+        stress -= 1;
+        break;
+    case B:
+        var outcome = Math.floor(Math.random());
+        if (outcome = 0) {
+            console.log("You toughed it out. You stayed hydrated");
+            score += 1;
+            stress += 1;
+            break;
+        } else {
+            console.log("You pushed too hard. You missed 3 classes");
+            score -=2;
+            stress +=2;
+        }
+    case C:
+        console.log("Better get to work on that Linked-In");
         score -= 1;
         stress -= 1;
         break;
