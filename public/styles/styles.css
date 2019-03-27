@@ -1,3 +1,35 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+@font-face {
+  font-family: retro-computer;
+  src: url(fonts/retro-computer.ttf);
+}
+
+/* INDEX STYLE */
+
+#index {
+  font-family: retro-computer;
+  background-image: url("../images/index-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#login {
+  margin-top: 200px;
+}
+
+/* CLASSROOM STYLE */
+
+#classroom {
+  background-image: url("../images/classroom-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* SCOREBOARD STYLE */
+
+/* #scoreboard{} */
