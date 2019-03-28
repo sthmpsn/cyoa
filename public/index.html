@@ -49,6 +49,12 @@
                                 <label for="new-user-password">Password</label>
                                 <input type="password" class="form-control" id="new-user-password">
                             </div>
+                            <!-- John and steve test -->
+                            <div class="form-group">
+                                <label for="new-user-password-validate">Password</label>
+                                <input type="password" class="form-control" id="new-user-password-validate">
+                            </div>
+                            <!-- END John and steve test -->
                             <button type="submit" class="btn btn-secondary btn-block" id="btnSignUp">Submit</button>
                         </form>
                     </div>
@@ -79,6 +85,24 @@
             </div>
         </div>
     </div>
+    <!-- Begin Modal -->
+    <div id="loginModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header card-header">
+                    <h5 class="modal-title">User info Required</h5>
+                </div>
+                <div class="modal-body">
+                    <p id="loginMsg" class="text-center"></p>
+                </div>
+                <div class="modal-footer">
+                    <button id="loginModalClose" type="button" class="btn btn-secondary">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
+
 
     <script type="text/javascript" src="js/index.js"></script>
 </body>
