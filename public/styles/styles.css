@@ -1,8 +1,8 @@
 /* UNIVERSAL STYLE */
 
 @font-face {
-  font-family: retro-computer;
-  src: url(fonts/retro-computer.ttf);
+  font-family: half-bold-pixel-7;
+  src: url(fonts/half_bold_pixel-7.ttf);
 }
 
 hr {
@@ -12,26 +12,23 @@ hr {
 /* INDEX STYLE */
 
 #index {
-  font-family: retro-computer;
+  font-family: half-bold-pixel-7;
   background-image: url("../images/bg-index.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  color: #ddd;
 }
 
 #login {
   margin-top: 200px;
 }
 
-.password-text {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
 /* CLASSROOM STYLE */
 
 #classroom {
   background-image: url("../images/bg-bricks.gif");
-  font-family: retro-computer;
+  font-family: half-bold-pixel-7;
   color: #ddd;
 }
 
