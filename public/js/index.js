@@ -26,7 +26,7 @@ $(document).ready(function () {
         //define our new value variables
         var username = $("#new-user-email").val();
         var password = $("#new-user-password").val();
-        var passwordVerify = $("#new-user-password-validate").val();
+        var passwordVerify = $("#new-user-password-verify").val();
 
         var newUser = {
             username: username,

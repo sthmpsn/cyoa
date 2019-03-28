@@ -1,17 +1,19 @@
-.list-group-item {
-  line-height: 2.5;
-}
+/* UNIVERSAL STYLE */
 
 /* @font-face {
   font-family: retro-computer;
   src: url(fonts/retro-computer.ttf);
 } */
 
+hr {
+  background-color: #ddd;
+}
+
 /* INDEX STYLE */
 
 #index {
   font-family: retro-computer;
-  background-image: url("../images/index-bg.jpg");
+  background-image: url("../images/bg-index.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -21,13 +23,30 @@
   margin-top: 200px;
 }
 
+.password-text {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 /* CLASSROOM STYLE */
 
 #classroom {
-  background-image: url("../images/classroom-bg.jpg");
+  background-image: url("../images/bg-bricks.gif");
+  font-family: retro-computer;
+  color: #ddd;
+}
+
+.sidebar {
+  height: 100vh;
+  background-color: #222;
+  border: 1px solid #ddd;
+  padding: 25px 0;
+}
+
+.game-screen {
+  background-image: url("../images/bg-classroom.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
+  background-position: center;
 }
 
 /* SCOREBOARD STYLE */
