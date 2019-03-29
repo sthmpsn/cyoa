@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     password: {
-      type: DataTypes.STRING(256),
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [4]
