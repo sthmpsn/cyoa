@@ -1,5 +1,5 @@
 var db = require("../models");
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 module.exports = function (app) {
     //this post route is for checking passwords entered in the login
