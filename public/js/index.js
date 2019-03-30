@@ -53,7 +53,7 @@ $(document).ready(function() {
         var loginErrors = jqXHR.responseJSON.errors;
         loginErrors.forEach(function(error) {
           $("#loginMsg").append(error.msg);
-          $("#loginMsg").append("\r\n");
+          $("#loginMsg").append("\n");
         });
         $("#loginModal").show();
       },
