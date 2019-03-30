@@ -27,10 +27,14 @@ hr {
   margin-top: 200px;
 }
 
+#loginModal {
+  color: #222;
+}
+
 /* CLASSROOM STYLE */
 
 #classroom {
-  background-image: url("../images/bg-bricks2.gif");
+  background-image: url("../images/bg-bricks.gif");
 }
 
 .sidebar {

@@ -5,7 +5,7 @@ $(document).ready(function () {
         event.preventDefault();
         console.log("You signed in")
 
-        var username = $("#returning-user-email").val();
+        var username = $("#returning-user-name").val();
         var password = $("#returning-user-password").val();
         console.log("Form user:", username, password);
         var loginObject = { username: username, password: password }
@@ -24,7 +24,7 @@ $(document).ready(function () {
         event.preventDefault();
         console.log("You signed up for a new user")
         //define our new value variables
-        var username = $("#new-user-email").val();
+        var username = $("#new-user-name").val();
         var password = $("#new-user-password").val();
         var passwordVerify = $("#new-user-password-verify").val();
 
