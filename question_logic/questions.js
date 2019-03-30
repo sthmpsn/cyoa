@@ -13,9 +13,7 @@ var stress = 0;
 function question1() {
     $('.currentQuestion').html('<h4 class="question">It&apos;s the first day of class. You&apos;re a little nervous. Some funny cat videos might help you relax.');
     $('.currentQuestion').append('<button id="youtube" class="answer btn">');
-    $('#youtube').css('background-image', 'url(../public/images/)');
     $('.currentQuestion').append('<br><button id="vsc" class="answer btn">');
-    $('#vsc').css('background-image', 'url("https://www.hungryhowies.com/sites/default/files/styles/menu_item_280x175/public/images/menu-items/thumbnails/01._build_your_own_pizza_0.png?itok=JwtE20s8');
     $('button').click(function () {
         var userChoice = this.id;
         if (userChoice === 'youtube') {

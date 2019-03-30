@@ -63,7 +63,24 @@ hr {
 
 .question {
   min-height:50px;
-  font-size: 1em;
+  font-size: 2em;
+}
+
+#youtube {
+  background-image: url("../images/youtube.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 60px;
+  width: 100px;
+  background-position: center;
+}
+
+#vsc {
+background-image: url("../images/vsc.png");
+background-repeat: no-repeat;
+background-size: contain;
+height: 60px;
+width: 100px;
 }
 /* SCOREBOARD STYLE */
 
