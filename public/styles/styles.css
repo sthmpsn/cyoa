@@ -125,3 +125,7 @@ width: 100px;
 #scoreboard {
   margin-top: 25px;
 }
+
+.modal-content {
+  background-color: slategray;
+}
