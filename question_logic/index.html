@@ -77,7 +77,7 @@
     function question1() {
         $('.currentQuestion').html('<h4 class="question">It&apos;s the first day of class. You&apos;re a little nervous. Some funny cat videos might help you relax.');
         $('.currentQuestion').append('<button id="youtube" class="answer btn">');
-        $('#A').css('background-image', 'url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/502px-Logo_of_YouTube_%282015-2017%29.svg.png)');
+        $('#youtube').css('background', 'url(https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/502px-Logo_of_YouTube_%282015-2017%29.svg.png) no-repeat');
         $('.currentQuestion').append('<br><button id="vsc" class="answer btn">');
         $('button').click(function () {
             var userChoice = this.id;

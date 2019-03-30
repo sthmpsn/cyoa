@@ -46,6 +46,25 @@ hr {
   background-position: center;
 }
 
+.jumbotron {
+  margin-top: 10%;
+  margin-bottom:30%;
+  max-height: 30%;
+  margin-left:5%;
+  margin-right:5%;
+  background: none;
+}
+
+.btn {
+  margin: 1%;
+  white-space: normal;
+  font-size: 1em;
+}
+
+.question {
+  min-height:50px;
+  font-size: 1em;
+}
 /* SCOREBOARD STYLE */
 
 /* #scoreboard{} */

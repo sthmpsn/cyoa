@@ -1,180 +1,278 @@
-var score = 5;
-var stress = 5;
+var score = 0;
+var stress = 0;
 
-//Watch Youtube or pay attention in class
 
-if ($('.youTube').on('click') = youTube) {
-    load video;
-    score -= 1;
-    stress -= 1;
-}
-if ($('.VSC')) {
-    load VRC;
-    score += 1;
-    stress += 1;
-}
+// $('.startButton').on('click', function () {
+//     question1();
+//     score = 5;
+//     stress = 5;
+// });
 
-//Blizzard question
 
-var userChoice = $('.answer').on('click').val().trim()
-switch (userChoice) {
-    case A:
-        var outcome = Math.floor(Math.random());
-        if (outcome = 0) {
-            console.log("You didn't make it");
+
+function question1() {
+    $('.currentQuestion').html('<h4 class="question">It&apos;s the first day of class. You&apos;re a little nervous. Some funny cat videos might help you relax.');
+    $('.currentQuestion').append('<button id="youtube" class="answer btn">');
+    $('#youtube').css('background-image', 'url(../public/images/)');
+    $('.currentQuestion').append('<br><button id="vsc" class="answer btn">');
+    $('#vsc').css('background-image', 'url("https://www.hungryhowies.com/sites/default/files/styles/menu_item_280x175/public/images/menu-items/thumbnails/01._build_your_own_pizza_0.png?itok=JwtE20s8');
+    $('button').click(function () {
+        var userChoice = this.id;
+        if (userChoice === 'youtube') {
+            console.log("That cat was addorable");
             score -= 1;
-            stress += 1;
-        } else {
-            console.log("You made it");
-            score += 1;
             stress -= 1;
-        }
-        break;
-    case B:
-        var outcome = Math.floor(Math.random() * 4);
-        if (outcome = 0) {
-            console.log("Your internet went out");
-            score -= 1;
-            stress += 1;
         } else {
-            console.log("You were able to learn");
+            console.log("Wow, that was a lot of information!")
             score += 1;
             stress += 1;
         }
-        break;
-    case C:
-        console.log("Nice snowman... man");
-        score -= 1;
-        stress += 1;
-        break;
+        question2()
+    })
 }
 
-//First group choice
-
-var userChoice = $('.answer').on('click').val().trim()
-switch (userChoice) {
-    case A:
-        var outcome = Math.floor(Math.random() * 4);
-        if (outcome = 0) {
-            console.log("It was a smashing success");
-            score += 1;
-            stress += 1;
-        } else {
-            console.log("It was an abject failure");
-            score -= 1;
-            stress += 1;
+function question2() {
+    $('.currentQuestion').html('<h4 class="question">A blizzard has descended on the land. Do you brave the elements or try to learn remotely?');
+    $('.currentQuestion').append('<button id="A" class="answer btn">It is just a little snow!');
+    $('.currentQuestion').append('<br><button id="B" class="answer btn">Better safe than sorry.');
+    $('.currentQuestion').append('<br><button id="C" class="answer btn">Do you want to build a snowman?');
+    $('button').click(function () {
+        var userChoice = this.id;
+        console.log(userChoice);
+        switch (userChoice) {
+            case 'A':
+                var outcome = Math.floor(Math.random() * 2);
+                if (outcome === 0) {
+                    console.log("You didn't make it");
+                    score -= 1;
+                    stress += 1;
+                } else {
+                    console.log("You made it");
+                    score += 1;
+                    stress -= 1;
+                }
+                break;
+            case 'B':
+                var outcome = Math.floor(Math.random() * 4);
+                if (outcome === 0) {
+                    console.log("Your internet went out");
+                    score -= 1;
+                    stress += 1;
+                } else {
+                    console.log("You were able to learn");
+                    score += 1;
+                    stress += 1;
+                }
+                break;
+            case 'C':
+                console.log("Nice snowman... man");
+                score -= 1;
+                stress -= 1;
+                break;
         }
-        break;
-    case B:
-        var outcome = Math.floor(Math.random() * 10);
-        if (outcome = 0) {
-            console.log("Your Hiroku deployment was corrupted!");
-            score -= 1;
-            stress += 1;
-        } else {
-            console.log("You got an A");
-            score += 1;
-            stress += 0;
+        console.log(score);
+        console.log(stress);
+        question3();
+    });
+
+}
+
+function question3() {
+    $('.currentQuestion').html('<h4 class="question">First group project week! How do you handle it?');
+    $('.currentQuestion').append('<button id="A" class="answer btn">I&apos;ll do it all myself. I want it done right.');
+    $('.currentQuestion').append('<br><button id="B" class="answer btn">Divide the work evenly. Many hands make light work.');
+    $('.currentQuestion').append('<br><button id="C" class="answer btn">My group is pretty smart. They&apos;ve got this.');
+    $('button').click(function () {
+        var userChoice = this.id;
+        console.log(userChoice);
+        switch (userChoice) {
+            case 'A':
+                var outcome = Math.floor(Math.random() * 4);
+                if (outcome === 0) {
+                    console.log("It was, surprisingly, a smashing success!");
+                    score += 2;
+                    stress += 2;
+                } else {
+                    console.log("It was an abject failure");
+                    score -= 2;
+                    stress += 2;
+                }
+                break;
+            case 'B':
+                var outcome = Math.floor(Math.random() * 10);
+                if (outcome === 0) {
+                    console.log("Try as you might, your app simply didn't work. Good effort.");
+                    score -= 0;
+                    stress += 1;
+                } else {
+                    console.log("Your project was a success. Everyone contributed, dividing the work.");
+                    score += 1;
+                    stress += 0;
+                }
+                break;
+            case 'C':
+                var outcome = Math.floor(Math.random() * 10);
+                if (outcome === 0) {
+                    console.log("Somehow you skated by and got an A despite contributing virutally nothing.");
+                    score += 2;
+                    stress -= 1;
+                } else {
+                    console.log("Your group caught on to your laziness and your name was left off of the final product.");
+                    score -= 2;
+                    stress += 0;
+                }
+                break;
         }
-        break;
-    case C:
-        console.log("Nice snowman... man");
-        score -= 1;
-        stress -= 1;
-        break;
+        console.log(score);
+        console.log(stress);
+        question4();
+    });
+
 }
 
-//Recruiter call
-
-var userChoice = $('.answer').on('click').val().trim()
-switch (userChoice) {
-    case A:
-        console.log("You had a lovely chat with Mark who said he'll keep you in mind");
-        score += 1;
-        stress += 1;
-        break;
-    case B:
-        console.log("You recieved a form letter saying thank you for your communique");
-        score -= 0;
-        stress += 0;
-        break;
-    case C:
-        console.log("Better get to work on that Linked-In");
-        score -= 1;
-        stress -= 1;
-        break;
-}
-
-//Bug fix
-
-//FIX THE BUG
-
-//Dysentery
-
-var userChoice = $('.answer').on('click').val().trim()
-switch (userChoice) {
-    case A:
-        console.log("You went to the doctor, you missed 1 class");
-        score -= 1;
-        stress -= 1;
-        break;
-    case B:
-        var outcome = Math.floor(Math.random());
-        if (outcome = 0) {
-            console.log("You toughed it out. You stayed hydrated");
-            score += 1;
-            stress += 1;
-            break;
-        } else {
-            console.log("You pushed too hard. You missed 3 classes");
-            score -=2;
-            stress +=2;
+function question4() {
+    $('.currentQuestion').html('<h4 class="question">You recieve a cold-call from a recruiter!');
+    $('.currentQuestion').append('<button id="A" class="answer btn">I call them back immediately and introduce myself.');
+    $('.currentQuestion').append('<br><button id="B" class="answer btn">I&apos;ll send an email. That should be good enough.');
+    $('.currentQuestion').append('<br><button id="C" class="answer btn">Ignore it. I&apos;m not ready.');
+    $('button').click(function () {
+        var userChoice = this.id;
+        console.log(userChoice);
+        switch (userChoice) {
+            case 'A':
+                console.log("They asked some difficult questions, but in the end you got your name out there.");
+                score += 1;
+                stress += 1;
+                break;
+            case 'B':
+                console.log("You recieve a form letter thanking you for your inquery.");
+                score += 0;
+                stress += 0;
+                break;
+            case 'C':
+                console.log("Maybe next time");
+                score -= 1;
+                stress -= 1;
+                break;
         }
-    case C:
-        console.log("Better get to work on that Linked-In");
-        score -= 1;
-        stress -= 1;
-        break;
+        console.log(score);
+        console.log(stress);
+        question5();
+    });
+};
+
+function question5() {
+    console.log('fix the bug');
+    question6();
+};
+
+function question6() {
+    $('.currentQuestion').html('<h4 class="question">You have dysentery.');
+    $('.currentQuestion').append('<button id="A" class="answer btn">I&apos;ll go to the doctor, even though it means missing class');
+    $('.currentQuestion').append('<br><button id="B" class="answer btn">Tough it out and go to class. I can&apos;t miss a day');
+    $('.currentQuestion').append('<br><button id="C" class="answer btn">Ignore it and go for a journey soewhere in the pacific northwest');
+    $('button').click(function () {
+        var userChoice = this.id;
+        console.log(userChoice);
+        switch (userChoice) {
+            case 'A':
+                console.log("You only missed 1 class and you're right as rain");
+                score -= 1;
+                stress -= 1;
+                console.log(score);
+                console.log(stress);
+                question7();
+                break;
+            case 'B':
+                var outcome = Math.floor(Math.random() * 2);
+                if (outcome === 0) {
+                    console.log("You over-exerted yourself and had to be hospitalized, missing 3 classes");
+                    score -= 2;
+                    stress += 2;
+                    console.log(score);
+                    console.log(stress);
+                    question7();
+                } else {
+                    console.log("You managed to stay hydrated and made it through class.");
+                    score += 1;
+                    stress += 0;
+                    console.log(score);
+                    console.log(stress);
+                    question7();
+                }
+                break;
+            case 'C':
+                console.log("You have died of dysentery");
+                score -= 100;
+                stress += 100;
+                finalscore();
+        }
+    });
+};
+
+function question7() {
+    $('.currentQuestion').html('<h4 class="question">It&apos;s spring break. How do you spend your free time?');
+    $('.currentQuestion').append('<button id="A" class="answer btn">Teach myself PHP and C# on the side!');
+    $('.currentQuestion').append('<br><button id="B" class="answer btn">Get caught up with class material and polish my portfolio.');
+    $('.currentQuestion').append('<br><button id="C" class="answer btn">Daytona Beach here I come!');
+    $('button').click(function () {
+        var userChoice = this.id;
+        console.log(userChoice);
+        switch (userChoice) {
+            case 'A':
+                console.log("You are a coding ninja.");
+                score += 2;
+                stress += 1;
+                break;
+            case 'B':
+                console.log("Everything is looking pretty polished now.");
+                score += 1;
+                stress += 0;
+                break;
+            case 'C':
+                console.log("Well that certainly was fun. You'll be picking sand out of your belly button for weeks.");
+                score -= 0;
+                stress -= 1;
+                break;
+        }
+        console.log(score);
+        console.log(stress);
+        question8();
+    });
+};
+
+function question8() {
+    $('.currentQuestion').html('<h4 class="question">It&apos;s time for your final project!');
+    $('.currentQuestion').append('<button id="A" class="answer btn">This is my moment! I quit my job, send the kids to boarding school; this is my life now!');
+    $('.currentQuestion').append('<br><button id="B" class="answer btn">This is just another assignment. I got this.');
+    $('.currentQuestion').append('<br><button id="C" class="answer btn">I&apos;m burnt-out. I need a break.');
+    $('button').click(function () {
+        var userChoice = this.id;
+        console.log(userChoice);
+        switch (userChoice) {
+            case 'A':
+                console.log("You worked your butt off, but your final project is a masterpiece");
+                score += 2;
+                stress += 3;
+                break;
+            case 'B':
+                console.log("Your final project functions and looks pretty good. Good work.");
+                score += 1;
+                stress += 2;
+                break;
+            case 'C':
+                console.log("You recieve a zero for this assignment, lowering your final grade.");
+                score -= 1;
+                stress -= 0;
+                break;
+        }
+        console.log(score);
+        console.log(stress);
+        finalscore();
+    });
+};
+function finalscore() {
+    alert("Your final score is " + score);
 }
 
-//Spring Break
-
-var userChoice = $('.answer').on('click').val().trim()
-switch (userChoice) {
-    case A:
-        console.log("You learned a lot of new things!");
-        score += 1;
-        stress += 1;
-        break;
-    case B:
-            console.log("You are all up to date, complete with shiny new portfolio");
-            score += 1;
-            stress += 0;
-            break;
-    case C:
-        console.log("What a fun trip!");
-        score -= 0;
-        stress -= 1;
-        break;
-}
-
-//Final project
-
-var userChoice = $('.answer').on('click').val().trim()
-switch (userChoice) {
-    case A:
-        console.log("You nailed it!");
-        score += 2;
-        stress += 2;
-        break;
-    case B:
-            console.log("Perfectly acceptable");
-            score += 1;
-            stress += 1;
-            break;
-    case C:
-        console.log("I hope your portfolio is good enough...");
-        score -= 0;
-        stress -= 1;
-        break;
-}
+question1();
