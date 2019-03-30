@@ -1,7 +1,7 @@
 {
-  "name": "node-handlebars-boilerplate",
+  "name": "web-dev-alliance",
   "version": "1.0.0",
-  "description": "Project 2 Starter",
+  "description": "CYOA",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -11,9 +11,10 @@
   },
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
-    "express-handlebars": "^3.0.0",
+    "express-validator": "^5.3.1",
     "mysql2": "^1.6.4",
     "sequelize": "^4.41.2"
   },
