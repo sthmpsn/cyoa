@@ -15,10 +15,10 @@ $(document).ready(function() {
       data: loginObject
     }).then(function(result) {
       if (result === true) {
-        alert("hello");
         window.location.href = "/classroom";
       } else {
-        alert(result);
+        $("#loginMsg").append(result);
+        $("#loginModal").show();
       }
     });
   });
