@@ -5,6 +5,11 @@
   src: url(fonts/half_bold_pixel-7.ttf);
 }
 
+body {
+  font-family: half-bold-pixel-7;
+  color: #ddd;
+}
+
 hr {
   background-color: #ddd;
 }
@@ -12,24 +17,24 @@ hr {
 /* INDEX STYLE */
 
 #index {
-  font-family: half-bold-pixel-7;
   background-image: url("../images/bg-index.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  color: #ddd;
 }
 
 #login {
   margin-top: 200px;
 }
 
+#loginModal {
+  color: #222;
+}
+
 /* CLASSROOM STYLE */
 
 #classroom {
   background-image: url("../images/bg-bricks.gif");
-  font-family: half-bold-pixel-7;
-  color: #ddd;
 }
 
 .sidebar {
@@ -44,6 +49,7 @@ hr {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  border: 1px solid #ddd;
 }
 
 /* SCOREBOARD STYLE */
@@ -69,4 +75,17 @@ hr {
 
 
 
-/* #scoreboard{} */
+#scoreboard-body {
+  background-image: url("../images/bg-scoreboard.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#gameover {
+  margin-top: 100px;
+}
+
+#scoreboard {
+  margin-top: 25px;
+}
