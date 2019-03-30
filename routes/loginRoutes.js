@@ -21,7 +21,7 @@ module.exports = function (app) {
                 console.log(req.body.password, currentUser.password);
                 bcrypt.compare(req.body.password, currentUser.password).then(function(find) {
                     if (find) {
-                        res.send("User logged in");
+                        res.send(true);
                     } else {
                         //send boolean to user with whether password is true or not
                         res.send("Incorrect password");
