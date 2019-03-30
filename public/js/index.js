@@ -46,25 +46,27 @@ $(document).ready(function () {
                 console.log(textStatus);
                 console.log("errorThrown: ");
                 console.log(errorThrown);
+                //append the error data to our modal
                 $("#loginMsg").append(jqXHR.responseJSON.errors[0].msg);
                 $("#loginModal").show();
             },
             success: function (data, textStatus, jqXHR) {
+                //model shows new user added + username
                 $("#loginMsg").append("Successfully added User: " + newUser.username);
                 $("#loginModal").show();
             }
         }).then(
-            function () {
+            function (result) {
+                //log our new object
                 console.log("Created New User: " + newUser.username);
+                console.log("Password:", newUser.password)
             }
         );
-
 
         // Clear the form when submitting
         $("#name").val("");
         $("#password").val("");
         $("#passwordCheck").val("");
-
     });
 
     // loginModal close button closure action

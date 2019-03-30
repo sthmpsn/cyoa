@@ -53,6 +53,27 @@ hr {
 }
 
 /* SCOREBOARD STYLE */
+#scoreboard {
+  font-family: half-bold-pixel-7;
+  color: #ddd;
+  background-color: black;
+  background-image: url("../images/bg-scoreboard.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#sb-container {
+  align-content: center;
+  margin-top: 45px;
+}
+
+#subtitles {
+  margin-top: 15px;
+}
+
+
+
 
 #scoreboard-body {
   background-image: url("../images/bg-scoreboard.png");
