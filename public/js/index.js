@@ -1,6 +1,6 @@
-$(document).ready(function () {
+$(document).ready(function() {
   //user login process
-  $("#btnLogin").on("click", function (event) {
+  $("#btnLogin").on("click", function(event) {
     event.preventDefault();
     console.log("You signed in");
 
@@ -13,7 +13,7 @@ $(document).ready(function () {
       method: "POST",
       url: "/password",
       data: loginObject
-    }).then(function (result) {
+    }).then(function(result) {
       if (result === true) {
         window.location.href = "/classroom";
       } else {
@@ -25,7 +25,7 @@ $(document).ready(function () {
   });
 
   //new user sign-up
-  $("#btnSignUp").on("click", function (event) {
+  $("#btnSignUp").on("click", function(event) {
     event.preventDefault();
     console.log("You signed up for a new user");
     //define our new value variables
@@ -44,7 +44,7 @@ $(document).ready(function () {
       url: "/api/user",
       data: newUser,
       dataType: "json",
-      error: function (jqXHR, textStatus, errorThrown) {
+      error: function(jqXHR, textStatus, errorThrown) {
         console.log("jqXHR Contents:\n");
         console.log(jqXHR);
         console.log("textStatus: ");
@@ -52,40 +52,35 @@ $(document).ready(function () {
         console.log("errorThrown: ");
         console.log(errorThrown);
         var loginErrors = jqXHR.responseJSON.errors;
-        loginErrors.forEach(function (error) {
+        loginErrors.forEach(function(error) {
           $("#loginMsg").append(error.msg);
           $("#loginMsg").append("\n");
         });
         $("#loginModal").show();
       },
-      success: function (data, textStatus, jqXHR) {
+      success: function(data, textStatus, jqXHR) {
         //model shows new user added + username
         $("#loginMsg").append("Successfully added User: " + newUser.username);
         $("#loginModal").show();
         console.log("jqXHR Contents:\n");
         console.log(jqXHR);
       }
-    }).then(function () {
+    }).then(function() {
       //log our new object
       console.log("Created New User: " + newUser.username);
       console.log("Password:", newUser.password);
-
-
+      window.location.href = "/classroom";
     });
 
     // Clear the form when submitting
     $("#new-user-name").val("");
     $("#new-user-password").val("");
     $("#new-user-password-verify").val("");
-
-
-
   });
 
   // loginModal close button closure action
-  $(document).on("click", "#loginModalClose", function () {
+  $(document).on("click", "#loginModalClose", function() {
     $("#loginModal").hide();
     $("#loginMsg").empty();
-
   });
 });
