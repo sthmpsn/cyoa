@@ -3,6 +3,7 @@ $(document).ready(function() {
   $("#btnLogin").on("click", function(event) {
     event.preventDefault();
     console.log("You signed in");
+
     var username = $("#returning-user-name").val();
     var password = $("#returning-user-password").val();
     console.log("Form user:", username, password);
@@ -13,7 +14,12 @@ $(document).ready(function() {
       url: "/password",
       data: loginObject
     }).then(function(result) {
-      alert(result);
+      if (result === true) {
+        alert("hello");
+        window.location.href = "/classroom";
+      } else {
+        alert(result);
+      }
     });
   });
 
