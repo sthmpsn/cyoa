@@ -1,6 +1,8 @@
 var score = 5;
 var stress = 5;
 
+
+
 //Watch Youtube or pay attention in class
 
 if ($('.youTube').on('click') = youTube) {
@@ -22,6 +24,7 @@ switch (userChoice) {
         var outcome = Math.floor(Math.random());
         if (outcome = 0) {
             console.log("You didn't make it");
+            $('.game-screen').html("You didn't make it");
             score -= 1;
             stress += 1;
         } else {
