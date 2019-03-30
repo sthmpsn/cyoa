@@ -270,6 +270,7 @@ function question8() {
     });
 };
 function finalscore() {
+    window.location.href = "/scoreboard";
     alert("Your final score is " + score);
 }
 
