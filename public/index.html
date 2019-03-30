@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     
     <!--SCRIPTS-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -43,8 +45,8 @@
                     <div class="col collapse text-center" id="new-user-login" data-parent="#form-accordion">
                         <form>
                             <div class="form-group">
-                                <label for="new-user-email">Email Address</label>
-                                <input type="email" class="form-control" id="new-user-email" aria-describedby="emailHelp">
+                                <label for="new-user-name">User Name</label>
+                                <input type="text" class="form-control" id="new-user-name">
                             </div>
                             <div class="form-group">
                                 <label for="new-user-password">Password</label>
@@ -70,8 +72,8 @@
                     <div class="col collapse text-center" id="returning-user-login"  data-parent="#form-accordion">
                         <form>
                             <div class="form-group">
-                                <label for="returning-user-email">Email Address</label>
-                                <input type="email" class="form-control" id="returning-user-email" aria-describedby="emailHelp">
+                                <label for="returning-user-name">User Name</label>
+                                <input type="text" class="form-control" id="returning-user-name">
                             </div>
                             <div class="form-group">
                                 <label for="returning-user-password">Password</label>
@@ -92,7 +94,7 @@
                     <h5 class="modal-title">User info Required</h5>
                 </div>
                 <div class="modal-body">
-                    <p id="loginMsg" class="text-center password-text"></p>
+                    <p id="loginMsg" class="text-center"></p>
                 </div>
                 <div class="modal-footer">
                     <button id="loginModalClose" type="button" class="btn btn-secondary">Close</button>

@@ -5,7 +5,7 @@ $(document).ready(function () {
         event.preventDefault();
         console.log("You signed in")
 
-        var username = $("#returning-user-email").val();
+        var username = $("#returning-user-name").val();
         var password = $("#returning-user-password").val();
         console.log("Form user:", username, password);
         var loginObject = { username: username, password: password }
@@ -24,7 +24,7 @@ $(document).ready(function () {
         event.preventDefault();
         console.log("You signed up for a new user")
         //define our new value variables
-        var username = $("#new-user-email").val();
+        var username = $("#new-user-name").val();
         var password = $("#new-user-password").val();
         var passwordVerify = $("#new-user-password-verify").val();
 
@@ -46,25 +46,27 @@ $(document).ready(function () {
                 console.log(textStatus);
                 console.log("errorThrown: ");
                 console.log(errorThrown);
+                //append the error data to our modal
                 $("#loginMsg").append(jqXHR.responseJSON.errors[0].msg);
                 $("#loginModal").show();
             },
             success: function (data, textStatus, jqXHR) {
+                //model shows new user added + username
                 $("#loginMsg").append("Successfully added User: " + newUser.username);
                 $("#loginModal").show();
             }
         }).then(
-            function () {
+            function (result) {
+                //log our new object
                 console.log("Created New User: " + newUser.username);
+                console.log("Password:", newUser.password)
             }
         );
-
 
         // Clear the form when submitting
         $("#name").val("");
         $("#password").val("");
         $("#passwordCheck").val("");
-
     });
 
     // loginModal close button closure action
