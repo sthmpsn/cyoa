@@ -1,10 +1,8 @@
 // DEPENDENCIES
 var path = require("path");
 
-
 // ROUTES
-module.exports =  function(app) {
-
+module.exports = function(app) {
   // index route loads index.html
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/index.html"));
@@ -19,5 +17,4 @@ module.exports =  function(app) {
   app.get("/scoreboard", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/scoreboard.html"));
   });
-
-}
+};
