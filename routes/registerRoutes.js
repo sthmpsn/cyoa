@@ -8,7 +8,7 @@ module.exports = function (app) {
     check("username", 'Name is required')
       .not().isEmpty()
       .custom(value => {
-        return db.User.findOne({ where: { username: value } }).then(user => {
+        return db.user.findOne({ where: { username: value } }).then(user => {
           if (user) {
             return Promise.reject('User already in use');
           }
@@ -33,7 +33,7 @@ module.exports = function (app) {
 
     } else {
       bcrypt.hash(req.body.password, 10, function (err, hash) {
-        db.User.create({
+        db.user.create({
           username: req.body.username,
           password: hash
         })

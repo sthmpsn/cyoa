@@ -3,13 +3,13 @@ var db = require("../models");
 module.exports = function(app) {
   // Get all user info
   app.get("/api/users", function(req, res) {
-    db.User.findAll({}).then(function(result) {
+    db.user.findAll({}).then(function(result) {
       res.json(result);
     });
   });
 
   app.get("/api/scoreboard", function(req, res) {
-    db.User.findAll({
+    db.user.findAll({
       order: [["finalScore", "DESC"], ["finalStress", "ASC"]],
       limit: 10
     }).then(function(result) {
@@ -18,7 +18,7 @@ module.exports = function(app) {
   });
 
   app.get("/api/users/:username", function(req, res) {
-    db.User.findOne({
+    db.user.findOne({
       where: {
         username: req.params.username
       }
@@ -28,7 +28,7 @@ module.exports = function(app) {
   });
 
   app.put("/api/users/:username", function(req, res) {
-    db.User.update(
+    db.user.update(
       {
         currentScore: req.body.currentScore,
         currentStress: req.body.currentStress,
@@ -45,7 +45,7 @@ module.exports = function(app) {
   });
 
   app.put("/api/final/users/:username", function(req, res) {
-    db.User.update(
+    db.user.update(
       {
         currentScore: req.body.currentScore,
         currentStress: req.body.currentStress,

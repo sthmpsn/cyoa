@@ -4,7 +4,7 @@ var bcrypt = require("bcryptjs");
 module.exports = function(app) {
   //this post route is for checking passwords entered in the login
   app.post("/password", function(req, res) {
-    db.User.findAll({}).then(function(result) {
+    db.user.findAll({}).then(function(result) {
       var currentUser;
       var userExists = false;
 
