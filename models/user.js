@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("User", {
+  var User = sequelize.define("user", {
     username: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -14,12 +14,22 @@ module.exports = function(sequelize, DataTypes) {
         len: [4]
       }
     },
-    score: {
+    currentScore: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0
     },
-    stress: {
+    currentStress: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    finalScore: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    finalStress: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0
