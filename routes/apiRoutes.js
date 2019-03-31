@@ -10,7 +10,8 @@ module.exports = function(app) {
 
   app.get("/api/scoreboard", function(req, res) {
     db.User.findAll({
-      order: [["score", "DESC"], ["stress", "ASC"]]
+      order: [["score", "DESC"], ["stress", "ASC"]],
+      limit: 10
     }).then(function(result) {
       res.json(result);
     });
