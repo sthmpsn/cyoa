@@ -4,7 +4,7 @@ var stress = 5;
 function question1() {
     $('.currentQuestion').html('<h4 class="question">It&apos;s the first day of class. You&apos;re a little nervous. Some funny cat videos might help you relax.');
     $('.currentQuestion').append('<button id="youtube" class="answer btn" data-toggle="modal" data-target="#questionModal">');
-    $('.currentQuestion').append('<br><button id="vsc" class="answer btn">');
+    $('.currentQuestion').append('<br><button id="vsc" class="answer btn" data-toggle="modal" data-target="#questionModal">');
     $('button').click(function () {
         var userChoice = this.id;
         if (userChoice === 'youtube') {
@@ -28,9 +28,9 @@ function question1() {
 function question2() {
     // $('#questionModal').hide();
     $('.currentQuestion').html('<h4 class="question">A blizzard has descended on the land. Do you brave the elements or try to learn remotely?');
-    $('.currentQuestion').append('<button id="A" class="answer btn">It is just a little snow!');
-    $('.currentQuestion').append('<br><button id="B" class="answer btn">Better safe than sorry.');
-    $('.currentQuestion').append('<br><button id="C" class="answer btn">Do you want to build a snowman?');
+    $('.currentQuestion').append('<button id="A" class="answer btn" data-toggle="modal" data-target="#questionModal">It is just a little snow!');
+    $('.currentQuestion').append('<br><button id="B" class="answer btn" data-toggle="modal" data-target="#questionModal">Better safe than sorry.');
+    $('.currentQuestion').append('<br><button id="C" class="answer btn" data-toggle="modal" data-target="#questionModal">Do you want to build a snowman?');
     $('button').click(function () {
         var userChoice = this.id;
         console.log(userChoice);
@@ -83,9 +83,9 @@ function question2() {
 function question3() {
     $('#questionModal').hide();
     $('.currentQuestion').html('<h4 class="question">First group project week! How do you handle it?');
-    $('.currentQuestion').append('<button id="A" class="answer btn">I&apos;ll do it all myself. I want it done right.');
-    $('.currentQuestion').append('<br><button id="B" class="answer btn">Divide the work evenly. Many hands make light work.');
-    $('.currentQuestion').append('<br><button id="C" class="answer btn">My group is pretty smart. They&apos;ve got this.');
+    $('.currentQuestion').append('<button id="A" class="answer btn" data-toggle="modal" data-target="#questionModal">I&apos;ll do it all myself. I want it done right.');
+    $('.currentQuestion').append('<br><button id="B" class="answer btn" data-toggle="modal" data-target="#questionModal">Divide the work evenly. Many hands make light work.');
+    $('.currentQuestion').append('<br><button id="C" class="answer btn" data-toggle="modal" data-target="#questionModal">My group is pretty smart. They&apos;ve got this.');
     $('button').click(function () {
         var userChoice = this.id;
         console.log(userChoice);
@@ -146,9 +146,9 @@ function question3() {
 function question4() {
     $('#questionModal').hide();
     $('.currentQuestion').html('<h4 class="question">You recieve a cold-call from a recruiter!');
-    $('.currentQuestion').append('<button id="A" class="answer btn">I call them back immediately and introduce myself.');
-    $('.currentQuestion').append('<br><button id="B" class="answer btn">I&apos;ll send an email. That should be good enough.');
-    $('.currentQuestion').append('<br><button id="C" class="answer btn">Ignore it. I&apos;m not ready.');
+    $('.currentQuestion').append('<button id="A" class="answer btn" data-toggle="modal" data-target="#questionModal">I call them back immediately and introduce myself.');
+    $('.currentQuestion').append('<br><button id="B" class="answer btn" data-toggle="modal" data-target="#questionModal">I&apos;ll send an email. That should be good enough.');
+    $('.currentQuestion').append('<br><button id="C" class="answer btn" data-toggle="modal" data-target="#questionModal">Ignore it. I&apos;m not ready.');
     $('button').click(function () {
         var userChoice = this.id;
         console.log(userChoice);
@@ -190,9 +190,9 @@ function question5() {
 function question6() {
     $('#questionModal').hide();
     $('.currentQuestion').html('<h4 class="question">You have dysentery.');
-    $('.currentQuestion').append('<button id="A" class="answer btn">I&apos;ll go to the doctor, even though it means missing class');
-    $('.currentQuestion').append('<br><button id="B" class="answer btn">Tough it out and go to class. I can&apos;t miss a day');
-    $('.currentQuestion').append('<br><button id="C" class="answer btn">Ignore it and go for a journey somewhere in the pacific northwest');
+    $('.currentQuestion').append('<button id="A" class="answer btn" data-toggle="modal" data-target="#questionModal">I&apos;ll go to the doctor, even though it means missing class');
+    $('.currentQuestion').append('<br><button id="B" class="answer btn" data-toggle="modal" data-target="#questionModal">Tough it out and go to class. I can&apos;t miss a day');
+    $('.currentQuestion').append('<br><button id="C" class="answer btn" data-toggle="modal" data-target="#questionModal">Ignore it and go for a journey somewhere in the pacific northwest');
     $('button').click(function () {
         var userChoice = this.id;
         console.log(userChoice);
@@ -246,9 +246,9 @@ function question6() {
 function question7() {
     $('#questionModal').hide();
     $('.currentQuestion').html('<h4 class="question">It&apos;s spring break. How do you spend your free time?');
-    $('.currentQuestion').append('<button id="A" class="answer btn">Teach myself PHP and C# on the side!');
-    $('.currentQuestion').append('<br><button id="B" class="answer btn">Get caught up with class material and polish my portfolio.');
-    $('.currentQuestion').append('<br><button id="C" class="answer btn">Daytona Beach here I come!');
+    $('.currentQuestion').append('<button id="A" class="answer btn" data-toggle="modal" data-target="#questionModal">Teach myself PHP and C# on the side!');
+    $('.currentQuestion').append('<br><button id="B" class="answer btn" data-toggle="modal" data-target="#questionModal">Get caught up with class material and polish my portfolio.');
+    $('.currentQuestion').append('<br><button id="C" class="answer btn" data-toggle="modal" data-target="#questionModal">Daytona Beach here I come!');
     $('button').click(function () {
         var userChoice = this.id;
         console.log(userChoice);
@@ -284,9 +284,9 @@ function question7() {
 function question8() {
     $('#questionModal').hide();
     $('.currentQuestion').html('<h4 class="question">It&apos;s time for your final project!');
-    $('.currentQuestion').append('<button id="A" class="answer btn">This is my moment! I quit my job, send the kids to boarding school; this is my life now!');
-    $('.currentQuestion').append('<br><button id="B" class="answer btn">This is just another assignment. I got this.');
-    $('.currentQuestion').append('<br><button id="C" class="answer btn">I&apos;m burnt-out. I need a break.');
+    $('.currentQuestion').append('<button id="A" class="answer btn" data-toggle="modal" data-target="#questionModal">This is my moment! I quit my job, send the kids to boarding school; this is my life now!');
+    $('.currentQuestion').append('<br><button id="B" class="answer btn" data-toggle="modal" data-target="#questionModal">This is just another assignment. I got this.');
+    $('.currentQuestion').append('<br><button id="C" class="answer btn" data-toggle="modal" data-target="#questionModal">I&apos;m burnt-out. I need a break.');
     $('button').click(function () {
         var userChoice = this.id;
         console.log(userChoice);
