@@ -23,7 +23,7 @@ $(document).ready(function() {
       console.log(user.stress);
 
       var rankEl = $("<p class=\"h3 my-4\">" + rank + "</p>");
-      var nameEl = $("<p class=\"h3 my-4\">" + user.username + "</p>");
+      var nameEl = $("<p class=\"h3 my-4\">" + (user.username.charAt(0).toUpperCase() + user.username.slice(1)) + "</p>");
       var scoreEl = $("<p class=\"h3 my-4\">" + user.score + "</p>");
 
       if (rank === 1) {
