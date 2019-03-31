@@ -11,6 +11,11 @@ $(document).ready(function () {
     var question = result.currentQuestionId;
     var score = result.currentScore;
     var stress = result.currentStress;
+
+    //make displays correct
+    $("#stress-display").html(stress);
+    $("#grade-display").html(score);
+
     console.log(question);
     // $('.startButton').on('click', function () {
     //     question1();
@@ -381,6 +386,10 @@ $(document).ready(function () {
 
     //this function will update the database with the score after each question, as well as the current question the user is on
     function saveScore() {
+      //update the stress and grade
+      $("#stress-display").html(stress);
+      $("#grade-display").html(score);
+      
       var data = {
         currentScore: score,
         currentStress: stress,
