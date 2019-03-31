@@ -5,7 +5,7 @@ CREATE DATABASE cyoa;
 USE cyoa;
 
 CREATE TABLE users (
-    ID int,
+    id int,
     username varchar(255),
     password varchar(255),
     score int,

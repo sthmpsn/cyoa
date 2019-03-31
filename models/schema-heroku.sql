@@ -5,7 +5,7 @@ CREATE DATABASE ov8uu7vikyzvwwiv;
 USE ov8uu7vikyzvwwiv;
 
 CREATE TABLE users (
-    ID int,
+    id int,
     username varchar(255),
     password varchar(255),
     score int,
