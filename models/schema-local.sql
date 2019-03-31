@@ -4,13 +4,15 @@ DROP DATABASE IF EXISTS cyoa;
 CREATE DATABASE cyoa;
 USE cyoa;
 
-CREATE TABLE users (
-    id int,
-    username varchar(255),
-    password varchar(255),
-    currentScore int,
-    finalScore int,
-    currentStress int,
-    finalStress int,
-    currentQuestionId int
-);
+-- Don't want to define this here. This definition is in the model files
+
+-- CREATE TABLE users (
+--     id int,
+--     username varchar(255),
+--     password varchar(255),
+--     currentScore int,
+--     finalScore int,
+--     currentStress int,
+--     finalStress int,
+--     currentQuestionId int
+-- );
