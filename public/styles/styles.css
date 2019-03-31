@@ -124,3 +124,15 @@ width: 100px;
 #scoreboard {
   margin-top: 25px;
 }
+
+.gold{
+  color: #f7e27b;
+}
+
+.silver{
+  color: silver;
+}
+
+.bronze{
+  color: #dfa98c;
+}
