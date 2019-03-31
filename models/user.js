@@ -37,7 +37,7 @@ module.exports = function(sequelize, DataTypes) {
     currentQuestionId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0
+      defaultValue: 1
     }
   });
   return User;
