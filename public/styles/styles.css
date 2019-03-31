@@ -94,8 +94,9 @@ width: 100px;
   font-family: half-bold-pixel-7;
   color: #ddd;
   background-color: black;
-  background-image: url("../images/bg-scoreboard.png");
+  background-image: url("../images/bg-scoreboard-2.png");
   background-repeat: no-repeat;
+  background-size: cover;
   background-position: center;
   background-attachment: fixed;
 }
@@ -109,15 +110,12 @@ width: 100px;
   margin-top: 15px;
 }
 
-
-
-
-#scoreboard-body {
-  background-image: url("../images/bg-scoreboard.png");
+/* #scoreboard-body {
+  background-image: url("../images/bg-scoreboard-2.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-}
+} */
 
 #gameover {
   margin-top: 100px;
