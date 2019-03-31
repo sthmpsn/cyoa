@@ -15,10 +15,11 @@ $(document).ready(function() {
       data: loginObject
     }).then(function(result) {
       if (result === true) {
-        alert("hello");
         window.location.href = "/classroom";
       } else {
-        alert(result);
+        $("#loginMsg").append(result);
+        $("#loginModal").show();
+        $("#returning-user-password").val("");
       }
     });
   });
@@ -53,7 +54,7 @@ $(document).ready(function() {
         var loginErrors = jqXHR.responseJSON.errors;
         loginErrors.forEach(function(error) {
           $("#loginMsg").append(error.msg);
-          $("#loginMsg").append("\r\n");
+          $("#loginMsg").append("\n");
         });
         $("#loginModal").show();
       },
@@ -68,17 +69,18 @@ $(document).ready(function() {
       //log our new object
       console.log("Created New User: " + newUser.username);
       console.log("Password:", newUser.password);
+      window.location.href = "/classroom";
     });
 
     // Clear the form when submitting
-    $("#name").val("");
-    $("#password").val("");
-    $("#passwordCheck").val("");
+    $("#new-user-name").val("");
+    $("#new-user-password").val("");
+    $("#new-user-password-verify").val("");
   });
 
   // loginModal close button closure action
   $(document).on("click", "#loginModalClose", function() {
     $("#loginModal").hide();
-    location.reload();
+    $("#loginMsg").empty();
   });
 });
