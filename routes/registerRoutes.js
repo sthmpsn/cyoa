@@ -1,5 +1,5 @@
 var db = require("../models");
-const bcrypt = require('bcryptjs');
+var bcrypt = require('bcryptjs');
 var { check, validationResult } = require('express-validator/check');
 
 module.exports = function (app) {
@@ -28,7 +28,7 @@ module.exports = function (app) {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-      console.log("ERRORS EXIST");
+      console.log("User Registration Requirements not met");
       return res.status(422).json({ errors: errors.array() });
 
     } else {
@@ -38,7 +38,7 @@ module.exports = function (app) {
           password: hash
         })
           .then(function (dbUser) {
-            console.log(req.body.username + " was submitted for creation\n Hashed PW: " + hash);
+            console.log(req.body.username + " was submitted for creation");
             res.json({ id: dbUser.insertID });
 
           });
