@@ -8,7 +8,9 @@ CREATE TABLE users (
     id int,
     username varchar(255),
     password varchar(255),
-    score int,
-    stress int,
+    currentScore int,
+    finalScore int,
+    currentStress int,
+    finalStress int,
     currentQuestionId int
 );
