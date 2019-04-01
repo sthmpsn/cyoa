@@ -125,6 +125,9 @@ width: 100px;
   margin-top: 25px;
 }
 
+.modal-content {
+  background-color: slategray;
+}
 .gold{
   color: #f7e27b;
 }
