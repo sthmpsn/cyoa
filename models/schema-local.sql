@@ -11,8 +11,8 @@ USE cyoa;
 --     username varchar(255),
 --     password varchar(255),
 --     currentScore int,
---     finalScore int,
+--     highScore int,
 --     currentStress int,
---     finalStress int,
+--     highStress int,
 --     currentQuestionId int
 -- );

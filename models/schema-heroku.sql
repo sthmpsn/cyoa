@@ -11,8 +11,8 @@ USE ov8uu7vikyzvwwiv;
 --     username varchar(255),
 --     password varchar(255),
 --     currentScore int,
---     finalScore int,
+--     highScore int,
 --     currentStress int,
---     finalStress int,
+--     highStress int,
 --     currentQuestionId int
 -- );

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  localStorage.setItem("username", null);
+  localStorage.setItem("username", "null");
   //user login process
   $("#btnLogin").on("click", function(event) {
     event.preventDefault();

@@ -24,12 +24,12 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       defaultValue: 0
     },
-    finalScore: {
+    highScore: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0
     },
-    finalStress: {
+    highStress: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0
