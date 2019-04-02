@@ -30,7 +30,7 @@ module.exports = function(app) {
             }
           });
       } else {
-        res.send("Incorrect username");
+        res.send("Username not found");
       }
     });
   });

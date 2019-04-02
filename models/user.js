@@ -17,12 +17,12 @@ module.exports = function(sequelize, DataTypes) {
     currentScore: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0
+      defaultValue: 20
     },
     currentStress: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 0
+      defaultValue: 20
     },
     highScore: {
       type: DataTypes.INTEGER,
