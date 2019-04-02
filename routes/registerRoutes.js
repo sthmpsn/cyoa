@@ -13,6 +13,9 @@ module.exports = function (app) {
           }
         })
       }),
+      check('username')
+        .custom(value => !/\s/.test(value))
+        .withMessage('No spaces are allowed in the username'),
     check("password", "Password cannot be empty").not().isEmpty(),
     check("password", "Password length must be at least 4 characters").isLength({ min: 4 }),
     check("passwordVerify","Please verify your password")
