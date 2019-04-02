@@ -14,7 +14,7 @@ hr {
   background-color: #ddd;
 }
 
-/* INDEX STYLE */
+/* INDEX.HTML STYLE */
 
 #index {
   background-color: #222;
@@ -39,7 +39,7 @@ hr {
   white-space: pre;
 }
 
-/* CLASSROOM STYLE */
+/* CLASSROOM.HTML STYLE */
 
 #classroom {
   background-image: url("../images/bg-bricks.gif");
@@ -61,11 +61,8 @@ hr {
 }
 
 .jumbotron {
-  margin-top: 10%;
-  margin-bottom:30%;
-  max-height: 30%;
-  margin-left:5%;
-  margin-right:5%;
+  margin: 80px 0px 0px 0px;
+  padding: 5px;
   background: none;
 }
 
@@ -77,7 +74,6 @@ hr {
 
 .question {
   min-height:50px;
-  font-size: 2em;
 }
 
 #youtube {
@@ -97,7 +93,7 @@ height: 60px;
 width: 100px;
 }
 
-/* SCOREBOARD STYLE */
+/* SCOREBOARD.HTML STYLE */
 
 #scoreboard {
   background-color: black;
@@ -135,13 +131,16 @@ width: 100px;
 
 /* MEDIA QUERIES */
 
-@media screen and (min-width: 578px) {
+@media screen and (min-width: 576px) {
   #login {
     margin-top: 150px;
   }
   #login-title {
     background: none;
     border: none;
+  }
+  .question {
+    font-size: 2em;
   }
 }
 
@@ -156,9 +155,13 @@ width: 100px;
   #login {
     margin-top: 200px;
   }
-
+  .jumbotron {
+    margin: 80px 25px 0px 25px;
+  }
 }
 
 @media screen and (min-width: 1200px){
-
+  .jumbotron {
+    margin: 80px 100px 0px 100px;
+  }
 }
