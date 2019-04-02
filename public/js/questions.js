@@ -228,7 +228,7 @@ $(document).ready(function () {
     }
 
     function question5() {
-      console.log('fix the bug');
+      loseConditions();
       $('.currentQuestion').html('<h4 class="question">Find the bugs.');
       $('.currentQuestion').append('<button id="A" class="answer btn" data-toggle="modal" data-target="#questionModal" data-backdrop="static" data-keyboard="false">This is where the picture will go');
       $('.answer').click(function () {
