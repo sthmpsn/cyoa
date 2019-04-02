@@ -31,7 +31,6 @@ $(document).ready(function () {
     console.log(modalFadeButton);
 
     function question1() {
-      
       loseConditions();
       $('.currentQuestion').html('<h4 class="question">It&apos;s the first day of class. You&apos;re a little nervous. Some funny cat videos might help you relax.');
       $('.currentQuestion').append('<button id="youtube"' + modalFadeButton);
@@ -51,11 +50,11 @@ $(document).ready(function () {
           score += 10;
           stress += 10;
         }
-        $('#questionModalNext').click(function () {
-          question++;
-          saveScore();
-          findQuestion();
-        });
+        question++;
+      });
+      $('#questionModalNext').click(function () {
+        saveScore();
+        findQuestion();
       });
     }
 
@@ -109,15 +108,15 @@ $(document).ready(function () {
             stress -= 15;
             break;
         }
-        console.log(score);
-        console.log(stress);
-        $('#questionModalNext').click(function () {
-          question++;
-          saveScore();
-          findQuestion();
-        });
+        question++;
       });
-    };
+      $('#questionModalNext').click(function () {
+        saveScore();
+        findQuestion();
+      });
+    }
+
+
 
 
 
@@ -180,13 +179,11 @@ $(document).ready(function () {
             }
             break;
         }
-        console.log(score);
-        console.log(stress);
-        $('#questionModalNext').click(function () {
-          question++;
-          saveScore();
-          findQuestion();
-        })
+        question++;
+      });
+      $('#questionModalNext').click(function () {
+        saveScore();
+        findQuestion();
       });
     }
 
@@ -222,82 +219,93 @@ $(document).ready(function () {
             stress -= 5;
             break;
         }
-        console.log(score);
-        console.log(stress);
-        $('#questionModalNext').click(function () {
-          question += 2;
-          saveScore();
-          findQuestion();
-        });
+        question++;
+      });
+      $('#questionModalNext').click(function () {
+        saveScore();
+        findQuestion();
       });
     }
 
     function question5() {
       console.log('fix the bug');
-      question++;
-      saveScore();
-      question6();
+      $('.currentQuestion').html('<h4 class="question">Find the bugs.');
+      $('.currentQuestion').append('<button id="A" class="answer btn" data-toggle="modal" data-target="#questionModal" data-backdrop="static" data-keyboard="false">This is where the picture will go');
+      $('.answer').click(function () {
+        $(".questionMsg").html("You found them all!")
+        $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:194%;position:relative;"><iframe src="https://giphy.com/embed/11ZSwQNWba4YF2"' + gliphyEmbed + '"https://giphy.com/gifs/loop-work-programmer-11ZSwQNWba4YF2">via GIPHY</a></p>');
+        question++;
+      });
+      $('#questionModalNext').click(function () {
+        saveScore();
+        findQuestion();
+      });
     }
 
     function question6() {
       loseConditions();
-      
-      var userChoice = this.id;
-      console.log(userChoice);
-      switch (userChoice) {
-        case 'A':
-          console.log("You only missed 1 class and you're right as rain");
-          $(".questionMsg").html("You only missed 1 class and you're right as rain.");
-          $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:69%;position:relative;"><iframe src="https://giphy.com/embed/3o7TKKxsoUjRiUUeas"' + gliphyEmbed + '"https://giphy.com/gifs/hulu-parks-and-recreation-nbc-3o7TKKxsoUjRiUUeas"></a>');
-          score -= 5;
-          stress -= 10;
-          console.log(score);
-          console.log(stress);
-          question++;
-          saveScore();
-          findQuestion();
-          break;
-        case 'B':
-          var outcome = Math.floor(Math.random() * 2);
-          if (outcome === 0) {
-            console.log("You over-exerted yourself and had to be hospitalized, missing 3 classes");
-            $(".questionMsg").html("You over-exerted yourself and had to be hospitalized, missing 3 classes.");
-            $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:50%;position:relative;"><iframe src="https://giphy.com/embed/PADZOft6ursY"' + gliphyEmbed + '"https://giphy.com/gifs/funny-omfg-PADZOft6ursY"></a>');
-            score -= 10;
-            stress += 15;
+      $('.currentQuestion').html('<h4 class="question">You have dysentery.');
+      $('.currentQuestion').append('<button id="A" class="answer btn" data-toggle="modal" data-target="#questionModal" data-backdrop="static" data-keyboard="false">I&apos;ll go to the doctor, even though it means missing class');
+      $('.currentQuestion').append('<br><button id="B" class="answer btn" data-toggle="modal" data-target="#questionModal" data-backdrop="static" data-keyboard="false">Tough it out and go to class. I can&apos;t miss a day');
+      $('.currentQuestion').append('<br><button id="C" class="answer btn" data-toggle="modal" data-target="#questionModal" data-backdrop="static" data-keyboard="false">Ignore it and go for a journey somewhere in the pacific northwest');
+      $('.answer').click(function () {
+        var userChoice = this.id;
+        console.log(userChoice);
+        switch (userChoice) {
+          case 'A':
+            console.log("You only missed 1 class and you're right as rain");
+            $(".questionMsg").html("You only missed 1 class and you're right as rain.");
+            $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:69%;position:relative;"><iframe src="https://giphy.com/embed/3o7TKKxsoUjRiUUeas"' + gliphyEmbed + '"https://giphy.com/gifs/hulu-parks-and-recreation-nbc-3o7TKKxsoUjRiUUeas"></a>');
+            score -= 5;
+            stress -= 10;
             console.log(score);
             console.log(stress);
             $('#questionModalNext').click(function () {
-              question++;
-              saveScore();
-              findQuestion();
-            });
-          } else {
-            console.log("You managed to stay hydrated and made it through class.");
-            $(".questionMsg").html("You managed to stay hydrated and made it through class.");
-            $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:67%;position:relative;"><iframe src="https://giphy.com/embed/Djk9ilQA2jjOg"' + gliphyEmbed + '"https://giphy.com/gifs/Djk9ilQA2jjOg"></a>');
-            score += 10;
-            stress += 5;
-            console.log(score);
-            console.log(stress);
-            $('#questionModalNext').click(function () {
-              question++;
               saveScore();
               findQuestion();
             })
-          }
-          break;
-        case 'C':
-          $(".questionMsg").html("You have died of dysentery.");
-          $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/3oz8xBKJFKAXB6JAm4"' + gliphyEmbed + '"https://giphy.com/gifs/oregon-wagon-trail-3oz8xBKJFKAXB6JAm4"></a><');
-          console.log("You have died of dysentery");
-          $('#questionModalNext').click(function () {
-            score -= 100;
-            stress += 100;
-            finalscore();
-          });
-      }
-    };
+            break;
+          case 'B':
+            var outcome = Math.floor(Math.random() * 2);
+            if (outcome === 0) {
+              console.log("You over-exerted yourself and had to be hospitalized, missing 3 classes");
+              $(".questionMsg").html("You over-exerted yourself and had to be hospitalized, missing 3 classes.");
+              $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:50%;position:relative;"><iframe src="https://giphy.com/embed/PADZOft6ursY"' + gliphyEmbed + '"https://giphy.com/gifs/funny-omfg-PADZOft6ursY"></a>');
+              score -= 10;
+              stress += 15;
+              console.log(score);
+              console.log(stress);
+              $('#questionModalNext').click(function () {
+                saveScore();
+                findQuestion();
+              });
+            } else {
+              console.log("You managed to stay hydrated and made it through class.");
+              $(".questionMsg").html("You managed to stay hydrated and made it through class.");
+              $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:67%;position:relative;"><iframe src="https://giphy.com/embed/Djk9ilQA2jjOg"' + gliphyEmbed + '"https://giphy.com/gifs/Djk9ilQA2jjOg"></a>');
+              score += 10;
+              stress += 5;
+              console.log(score);
+              console.log(stress);
+              $('#questionModalNext').click(function () {
+                saveScore();
+                findQuestion();
+              });
+            }
+            break;
+          case 'C':
+            $(".questionMsg").html("You have died of dysentery.");
+            $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/3oz8xBKJFKAXB6JAm4"' + gliphyEmbed + '"https://giphy.com/gifs/oregon-wagon-trail-3oz8xBKJFKAXB6JAm4"></a><');
+            console.log("You have died of dysentery");
+            $('#questionModalNext').click(function () {
+              score -= 100;
+              stress += 100;
+              finalscore();
+            });
+        }
+        question++;
+      });
+    }
 
 
     function question7() {
@@ -332,16 +340,13 @@ $(document).ready(function () {
             stress -= 15;
             break;
         }
-        console.log(score);
-        console.log(stress);
-        $('#questionModalNext').click(function () {
-
-          question++;
-          saveScore();
-          question8();
-        })
+        question++;
       });
-    };
+      $('#questionModalNext').click(function () {
+        saveScore();
+        question8();
+      });
+    }
 
     function question8() {
       loseConditions();
@@ -358,14 +363,14 @@ $(document).ready(function () {
             $(".questionMsg").html("You worked your butt off, but your final project is a masterpiece.");
             $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:76%;position:relative;"><iframe src="https://giphy.com/embed/xT5LMSleuVuCe24KLC"' + gliphyEmbed + '"https://giphy.com/gifs/season-7-the-simpsons-7x7-xT5LMSleuVuCe24KLC"></a>');
             score += 20;
-            stress += 30;
+            stress += 20;
             break;
           case 'B':
             console.log("Your final project functions and looks pretty good. Good work.");
             $(".questionMsg").html("Your final project functions and looks pretty good. Good work.");
             $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/QRB6F0x3ptYHu"' + gliphyEmbed + '"https://giphy.com/gifs/day-work-home-QRB6F0x3ptYHu"></a>');
             score += 10;
-            stress += 20;
+            stress += 10;
             break;
           case 'C':
             console.log("You recieve a zero for this assignment, lowering your final grade.");
@@ -375,10 +380,11 @@ $(document).ready(function () {
             stress -= 5;
             break;
         }
-        $('#questionModalNext').click(function () {
-          saveScore();
-          finalscore();
-        });
+        question++;
+      });
+      $('#questionModalNext').click(function () {
+        saveScore();
+        finalscore();
       });
     }
 
