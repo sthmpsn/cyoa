@@ -14,7 +14,7 @@ hr {
   background-color: #ddd;
 }
 
-/* INDEX STYLE */
+/* INDEX.HTML STYLE */
 
 #index {
   background-color: #222;
@@ -39,7 +39,7 @@ hr {
   white-space: pre;
 }
 
-/* CLASSROOM STYLE */
+/* CLASSROOM.HTML STYLE */
 
 #classroom {
   background-image: url("../images/bg-bricks.gif");
@@ -74,7 +74,6 @@ hr {
 
 .question {
   min-height:50px;
-  font-size: 2em;
 }
 
 #youtube {
@@ -94,7 +93,7 @@ height: 60px;
 width: 100px;
 }
 
-/* SCOREBOARD STYLE */
+/* SCOREBOARD.HTML STYLE */
 
 #scoreboard {
   background-color: black;
@@ -139,6 +138,9 @@ width: 100px;
   #login-title {
     background: none;
     border: none;
+  }
+  .question {
+    font-size: 2em;
   }
 }
 
