@@ -61,11 +61,8 @@ hr {
 }
 
 .jumbotron {
-  margin-top: 10%;
-  margin-bottom:30%;
-  max-height: 30%;
-  margin-left:5%;
-  margin-right:5%;
+  margin: 80px 0px 0px 0px;
+  padding: 5px;
   background: none;
 }
 
@@ -135,7 +132,7 @@ width: 100px;
 
 /* MEDIA QUERIES */
 
-@media screen and (min-width: 578px) {
+@media screen and (min-width: 576px) {
   #login {
     margin-top: 150px;
   }
@@ -156,9 +153,13 @@ width: 100px;
   #login {
     margin-top: 200px;
   }
-
+  .jumbotron {
+    margin: 80px 25px 0px 25px;
+  }
 }
 
 @media screen and (min-width: 1200px){
-
+  .jumbotron {
+    margin: 80px 100px 0px 100px;
+  }
 }
