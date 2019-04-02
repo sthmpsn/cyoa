@@ -50,7 +50,23 @@
             <button id="reset-button" class="btn btn-danger border-white mb-3" type="button">Play Again?</button>
         </div>
     </div>
-
+    <!-- Begin Modal -->
+    <div id="questionModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title questionMsg"></h5>
+                </div>
+                <div class="modal-body">
+                    <p id="questionFlavor"></p>
+                </div>
+                <div class="modal-footer">
+                    <button id="questionModalNext" type="button" class="btn btn-secondary close" data-dismiss="modal">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Modal -->
         <script type="text/javascript" src="js/scoreboard.js"></script>
 </body>
 </html>
