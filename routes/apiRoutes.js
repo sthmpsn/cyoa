@@ -10,7 +10,7 @@ module.exports = function(app) {
 
   app.get("/api/scoreboard", function(req, res) {
     db.User.findAll({
-      order: [["finalScore", "DESC"], ["finalStress", "ASC"]],
+      order: [["highScore", "DESC"], ["highStress", "ASC"]],
       limit: 10
     }).then(function(result) {
       res.json(result);
@@ -44,13 +44,13 @@ module.exports = function(app) {
     });
   });
 
-  app.put("/api/final/users/:username", function(req, res) {
+  app.put("/api/high/users/:username", function(req, res) {
     db.User.update(
       {
         currentScore: req.body.currentScore,
         currentStress: req.body.currentStress,
-        finalScore: req.body.finalScore,
-        finalStress: req.body.finalStress,
+        highScore: req.body.highScore,
+        highStress: req.body.highStress,
         currentQuestionId: req.body.currentQuestionId
       },
       {

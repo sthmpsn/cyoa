@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  localStorage.setItem("username", "null");
   //user login process
   $("#btnLogin").on("click", function(event) {
     event.preventDefault();
@@ -8,6 +9,7 @@ $(document).ready(function() {
     var password = $("#returning-user-password").val();
     console.log("Form user:", username, password);
     var loginObject = { username: username, password: password };
+    localStorage.setItem("username", username);
 
     $.ajax({
       method: "POST",
@@ -32,6 +34,7 @@ $(document).ready(function() {
     var username = $("#new-user-name").val().trim().toLowerCase();
     var password = $("#new-user-password").val();
     var passwordVerify = $("#new-user-password-verify").val();
+    localStorage.setItem("username", username);
 
     var newUser = {
       username: username,

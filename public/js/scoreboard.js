@@ -19,12 +19,12 @@ $(document).ready(function() {
       ++rank;
       console.log("Rank: " + rank);
       console.log(user.username);
-      console.log(user.finalScore);
-      console.log(user.finalStress);
+      console.log(user.highScore);
+      console.log(user.highStress);
 
-      var rankEl = $("<p class=\"h3 my-4\">" + rank + "</p>");
-      var nameEl = $("<p class=\"h3 my-4\">" + (user.username.charAt(0).toUpperCase() + user.username.slice(1)) + "</p>");
-      var scoreEl = $("<p class=\"h3 my-4\">" + user.finalScore + "</p>");
+      var rankEl = $("<p class='h3 my-4'>" + rank + "</p>");
+      var nameEl = $("<p class='h3 my-4'>" + (user.username.charAt(0).toUpperCase() + user.username.slice(1)) + "</p>");
+      var scoreEl = $("<p class='h3 my-4'>" + user.highScore + "</p>");
 
       if (rank === 1) {
         rankEl.addClass("gold");
