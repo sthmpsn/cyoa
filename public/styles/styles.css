@@ -17,14 +17,21 @@ hr {
 /* INDEX STYLE */
 
 #index {
-  background-image: url("../images/bg-index.jpg");
+  background-color: #222;
+  background-image: url("../images/bg-index-top.png"), url("../images/bg-index-left.png"), url("../images/bg-index-right.png");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  background-size: auto, contain, contain;
+  background-position: center top, left top, right top;
 }
 
 #login {
-  margin-top: 200px;
+  margin-top: 50px;
+  height: 100vh;
+}
+
+#login-title {
+  background: rgba(55,55,55,0.7);
+  border: 1px solid #ddd;
 }
 
 #loginModal {
@@ -89,16 +96,17 @@ background-size: contain;
 height: 60px;
 width: 100px;
 }
+
 /* SCOREBOARD STYLE */
+
 #scoreboard {
-  font-family: half-bold-pixel-7;
-  color: #ddd;
   background-color: black;
   background-image: url("../images/bg-scoreboard-2.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  margin-top: 25px;
 }
 
 #sb-container {
@@ -108,21 +116,6 @@ width: 100px;
 
 #subtitles {
   margin-top: 15px;
-}
-
-/* #scoreboard-body {
-  background-image: url("../images/bg-scoreboard-2.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-} */
-
-#gameover {
-  margin-top: 100px;
-}
-
-#scoreboard {
-  margin-top: 25px;
 }
 
 .modal-content {
@@ -138,4 +131,34 @@ width: 100px;
 
 .bronze{
   color: #dfa98c;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (min-width: 578px) {
+  #login {
+    margin-top: 150px;
+  }
+  #login-title {
+    background: none;
+    border: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 992px) {
+  #index {
+    background-size: contain;
+  }
+  #login {
+    margin-top: 200px;
+  }
+
+}
+
+@media screen and (min-width: 1200px){
+
 }
