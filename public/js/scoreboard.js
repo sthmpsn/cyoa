@@ -1,21 +1,73 @@
-$(document).ready(function() {
+$(document).ready(function () {
   console.log("Scoreboard JS Loaded");
   var rank = 0;
+
+  var user = localStorage.getItem("username");
+
+  var score = 0;
+  var stress = 0;
 
   // Get the RANK, NAME, and SCORE elements by their ID
   var $sbRankDiv = $("#scoreboard-rank");
   var $sbNameDiv = $("#scoreboard-name");
   var $sbScoreDiv = $("#scoreboard-score");
 
+  // necessary for giphy links to be responsive
+  var gliphyEmbed = ' width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><a href=';
+
+  function saveScoreFinal() {
+    var data = {
+      currentScore: 20,
+      currentStress: 20,
+      highScore: score,
+      highStress: stress,
+      currentQuestionId: 1
+    };
+    console.log(data);
+    $.ajax({
+      method: "PUT",
+      url: "/api/high/users/" + user,
+      data: data
+    }).then(function (result) {
+      console.log(result);
+    });
+  }
+
+  $('#reset-button').on('click', function () {
+    saveScoreFinal();
+    window.location.href = "/classroom";
+  });
+
+  $.ajax({
+    method: "GET",
+    url: "/api/users/" + user
+  }).then(function (result) {
+    score = result.currentScore;
+    stress = result.currentStress;
+
+    if (score <= 0) {
+      $('#questionModal').modal('show');
+      $(".questionMsg").html("You have flunked out of class.")
+      $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/10h8CdMQUWoZ8Y"' + gliphyEmbed + '"https://giphy.com/gifs/someone-idea-lurker-10h8CdMQUWoZ8Y"></a>');
+    } else if (stress >= 50) {
+      $('#questionModal').modal('show');
+      $(".questionMsg").html("You cracked under the pressure!")
+      $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/69warOL5MBhyzjAMov"' + gliphyEmbed + '"https://giphy.com/gifs/reaction-69warOL5MBhyzjAMov"></a>');
+    } else {
+      $('#questionModal').modal('show');
+      $(".questionMsg").html("You did it! You have graduated from the bootcamp!")
+      $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:114%;position:relative;"><iframe src="https://giphy.com/embed/3oEduUGL2JaSK7oS76"' + gliphyEmbed + '"https://giphy.com/gifs/jimmy-fallon-graduation-dwane-johnson-3oEduUGL2JaSK7oS76">via GIPHY</a></p>');
+    }
+  });
   // GET a request to the /scoreboard route and return the list of users in rank of highest to lowest score
   // Limit to top 10 users
   $.ajax({
     method: "GET",
     url: "/api/scoreboard"
-  }).then(function(result) {
+  }).then(function (result) {
     console.log("GET Scoreboard users running");
 
-    result.forEach(function(user) {
+    result.forEach(function (user) {
       ++rank;
       console.log("Rank: " + rank);
       console.log(user.username);
