@@ -57,6 +57,8 @@ hr {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-size: 175%;
+  margin-top: 0px;
   border: 1px solid #ddd;
 }
 

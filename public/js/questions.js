@@ -41,7 +41,7 @@ $(document).ready(function () {
     var target = document.getElementById('canvas-preview'); // your canvas element
     var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
     gauge.maxValue = 50; // set max gauge value
-    gauge.setMinValue(-50);
+    gauge.setMinValue(-10);
     gauge.animationSpeed = 32; // set animation speed (32 is default value)
     gauge.set(stress); // set actual value
 
@@ -357,9 +357,11 @@ $(document).ready(function () {
             $(".questionMsg").html("You have died of dysentery.");
             $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/3oz8xBKJFKAXB6JAm4"' + gliphyEmbed + '"https://giphy.com/gifs/oregon-wagon-trail-3oz8xBKJFKAXB6JAm4"></a><');
             console.log("You have died of dysentery");
+            score = score = -1;
+            stress = stress = -1;
+            $("#grade").val(score);
+            gauge.set(stress);
             $('#questionModalNext').click(function () {
-              score = score -= 100;
-              stress = stress += 100;
               finalscore();
             });
         }
@@ -484,25 +486,6 @@ $(document).ready(function () {
         console.log(result);
       });
     }
-
-    // //this function will save the last score saved as the final score, and will reset the current scores
-    // function saveScoreFinal() {
-    //   var data = {
-    //     currentScore: 20,
-    //     currentStress: 20,
-    //     highScore: score,
-    //     highStress: stress,
-    //     currentQuestionId: 1
-    //   };
-    //   console.log(data);
-    //   $.ajax({
-    //     method: "PUT",
-    //     url: "/api/high/users/" + user,
-    //     data: data
-    //   }).then(function (result) {
-    //     console.log(result);
-    //   });
-    // }
 
     function loseConditions() {
       if (score <= 0 || stress >= 50) {
