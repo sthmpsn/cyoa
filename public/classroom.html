@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">  
-    <script src="http://bernii.github.io/gauge.js/dist/gauge.min.js"></script>  
+    <script src="https://bernii.github.io/gauge.js/dist/gauge.min.js"></script>  
     <title>Choose Your Own Adventure</title>
 </head>
+
 <body id="classroom">
     <div class="container">
         <div class="row">
@@ -45,8 +46,8 @@
                     </div>
                 </div>
                 <div class="row align-content-center" id="meter">
-                    <!-- red from -2-5, yellow from 6-10, green from 11-16 -->
-                    <meter id="grade" min="-2" low="6" high="10" optimum="11" max="16" value="5"></meter>
+                    <!-- red from -1-49, yellow from 50-79, green from 80-120 -->
+                    <meter id="grade" min="-1" low="50" high="80" optimum="85" max="125" value="20"></meter>
                 </div>
                 <div class="row score align-content-center">
                     <div class="col text-center">
@@ -78,11 +79,11 @@
         </div>
     </div>
     <!-- End Modal -->
-</body>
+
     <!--SCRIPTS-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="/js/questions.js"></script>
 </body>
- </html>
+</html>
