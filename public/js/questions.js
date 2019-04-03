@@ -20,6 +20,32 @@ $(document).ready(function () {
     $("#stress-display").html(stress);
     $("#grade-display").html(score);
 
+    // STRESS GAUGE
+    var opts = {
+      lines: 12, // The number of lines to draw
+      angle: 0, // The length of each line
+      lineWidth: 0.4, // The line thickness
+      pointer: {
+        length: 0.59, // The radius of the inner circle
+        strokeWidth: 0.035, // The rotation offset
+        color: '#cfcfcf' // Fill color
+      },
+      limitMax: 'false',   // If true, the pointer will not go past the end of the gauge
+      generateGradient: true,
+      staticZones: [
+          {strokeStyle: "#30B32D", min: -50, max: -1}, // Green
+          {strokeStyle: "#FFDD00", min: -1, max: 30}, // Yellow
+          {strokeStyle: "#F03E3E", min: 30, max: 50}  // Red
+      ],
+    };
+    var target = document.getElementById('canvas-preview'); // your canvas element
+    var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
+    gauge.maxValue = 50; // set max gauge value
+    gauge.setMinValue(-50);
+    gauge.animationSpeed = 32; // set animation speed (32 is default value)
+    gauge.set(stress); // set actual value
+
+
     console.log(question);
 
     // necessary for modal fade to function and protect impropper input (clicking outside of the modal, hitting a button on the keyboard, etc)
@@ -41,14 +67,18 @@ $(document).ready(function () {
           console.log("That cat was adorable");
           $(".questionMsg").html("That cat was adorable")
           $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/ukgcHmvflVWjwE8eU5"' + gliphyEmbed + '"https://giphy.com/gifs/kitten-inspiration-cute-cat-ukgcHmvflVWjwE8eU5"></a>');
-          score -= 5;
-          stress -= 5;
+          score = score -= 5;
+          stress = stress -= 5;
+          $("#grade").val(score);
+          gauge.set(stress);
         } else {
           console.log("Wow, that was a lot of information!")
           $(".questionMsg").html("Wow, that was a lot of information!")
           $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:71%;position:relative;"><iframe src="https://giphy.com/embed/1NRcfqSvJxVnLumGV9"' + gliphyEmbed + '"https://giphy.com/gifs/punch-card-computer-1NRcfqSvJxVnLumGV9"></a>');
-          score += 10;
-          stress += 10;
+          score = score += 10;
+          stress = stress += 10;
+          $("#grade").val(score);
+          gauge.set(stress);
         }
         question++;
       });
@@ -74,14 +104,18 @@ $(document).ready(function () {
               console.log("The snow was too deep. You didn't make it to class.");
               $(".questionMsg").html("The snow was too deep. You didn't make it to class.")
               $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:54%;position:relative;"><iframe src="https://giphy.com/embed/xUOwGoV4fmBd0fiyGI"' + gliphyEmbed + '"https://giphy.com/gifs/groundhog-day-xUOwGoV4fmBd0fiyGI"></a>')
-              score -= 5;
-              stress += 15;
+              score = score -= 5;
+              stress = stress += 15;
+              $("#grade").val(score);
+              gauge.set(stress);
             } else {
               console.log("You made it");
               $(".questionMsg").html("Through sheer ingenuity, you made it to class.")
               $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/Wib2MfNmcI6PK"' + gliphyEmbed + '"https://giphy.com/gifs/mic-jonas-blizzard-snowstorm-Wib2MfNmcI6PK"></a>')
-              score += 15;
-              stress -= 5;
+              score = score += 15;
+              stress = stress -= 5;
+              $("#grade").val(score);
+              gauge.set(stress);
             }
             break;
           case 'B':
@@ -90,22 +124,28 @@ $(document).ready(function () {
               console.log("Your internet went out");
               $(".questionMsg").html("Just as class begins, your internet goes out.")
               $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:52%;position:relative;"><iframe src="https://giphy.com/embed/yjos61Qgsy17q"' + gliphyEmbed + '"https://giphy.com/gifs/yjos61Qgsy17q"></a>');
-              score -= 5;
-              stress += 10;
+              score = score -= 5;
+              stress = stress += 10;
+              $("#grade").val(score);
+              gauge.set(stress);
             } else {
               console.log("You were able to learn");
               $(".questionMsg").html("You were able to connect remotely.")
               $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/9JrkkDoJuU0FbdbUZU"' + gliphyEmbed + '"https://giphy.com/gifs/90s-drawing-welcome-9JrkkDoJuU0FbdbUZU"></a><');
-              score += 5;
-              stress -= 5;
+              score = score += 5;
+              stress = stress -= 5;
+              $("#grade").val(score);
+              gauge.set(stress);
             }
             break;
           case 'C':
             console.log("Nice snowman... man");
             $(".questionMsg").html("Nice snowman... man.")
             $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:178%;position:relative;"><iframe src="https://giphy.com/embed/26Ff2l7ENOhVCJpLy"' + gliphyEmbed + '"https://giphy.com/gifs/afv-fail-snow-26Ff2l7ENOhVCJpLy"></a>');
-            score -= 15;
-            stress -= 15;
+            score = score -= 15;
+            stress = stress -= 15;
+            $("#grade").val(score);
+            gauge.set(stress);
             break;
         }
         question++;
@@ -115,10 +155,6 @@ $(document).ready(function () {
         findQuestion();
       });
     }
-
-
-
-
 
     function question3() {
       loseConditions();
@@ -136,14 +172,18 @@ $(document).ready(function () {
               console.log("It was, surprisingly, a smashing success!");
               $(".questionMsg").html("It was, surprisingly, a smashing success!");
               $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/QNFhOolVeCzPQ2Mx85"' + gliphyEmbed + '"https://giphy.com/gifs/checkmatedigital-code-coding-monkey-QNFhOolVeCzPQ2Mx85"></a>');
-              score += 20;
-              stress += 20;
+              score = score += 20;
+              stress = stress += 20;
+              $("#grade").val(score);
+              gauge.set(stress);
             } else {
               console.log("It was an abject failure");
               $(".questionMsg").html("It was an abject failure.");
               $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/3o7aCPZ3vE2ggCpWmI"' + gliphyEmbed + '"https://giphy.com/gifs/reaction-3o7aCPZ3vE2ggCpWmI"></a>');
-              score -= 10;
-              stress += 20;
+              score = score -= 10;
+              stress = stress += 20;
+              $("#grade").val(score);
+              gauge.set(stress);
             }
             break;
           case 'B':
@@ -151,15 +191,19 @@ $(document).ready(function () {
             if (outcome === 0) {
               console.log("Try as you might, your app simply didn't work. Good effort.");
               $(".questionMsg").html("Try as you might, your app simply didn't work. Good effort.");
-              $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src"https://giphy.com/embed/uUlPgTGo3xE9oOWgaO"' + gliphyEmbed + '"https://giphy.com/gifs/uUlPgTGo3xE9oOWgaO"></a>');
-              score += 5;
-              stress += 10;
+              $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/uUlPgTGo3xE9oOWgaO"' + gliphyEmbed + '"https://giphy.com/gifs/uUlPgTGo3xE9oOWgaO"></a>');
+              score = score += 5;
+              stress = stress += 10;
+              $("#grade").val(score);
+              gauge.set(stress);
             } else {
               console.log("Your project was a success. Everyone contributed, dividing the work.");
               $(".questionMsg").html("Your project was a success. Everyone contributed, dividing the work.");
               $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:73%;position:relative;"><iframe src="https://giphy.com/embed/dSetNZo2AJfptAk9hp"' + gliphyEmbed + '"https://giphy.com/gifs/office-teamwork-coworkers-dSetNZo2AJfptAk9hp"></a>');
-              score += 10;
-              stress += 5;
+              score = score += 10;
+              stress = stress += 5;
+              $("#grade").val(score);
+              gauge.set(stress);
             }
             break;
           case 'C':
@@ -168,14 +212,18 @@ $(document).ready(function () {
               console.log("Somehow you skated by and got an A despite contributing virutally nothing.");
               $(".questionMsg").html("Somehow you skated by and got an A despite contributing virtually nothing.");
               $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/kHvVrjhX8LT7a"' + gliphyEmbed + '"https://giphy.com/gifs/office-space-kHvVrjhX8LT7a"></a>');
-              score += 10;
-              stress -= 15;
+              score = score += 10;
+              stress = stress -= 15;
+              $("#grade").val(score);
+              gauge.set(stress);
             } else {
               console.log("Your group caught on to your laziness and your name was left off of the final product.");
               $(".questionMsg").html("Your group caught on to your laziness and your name was left off of the final product.");
               $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/fxBXWzY85vC2GJ9dAb"' + gliphyEmbed + '"https://giphy.com/gifs/looneytunes-cartoon-looney-tunes-classics-fxBXWzY85vC2GJ9dAb"></a>');
-              score -= 20;
-              stress -= 5;
+              score = score -= 20;
+              stress = stress -= 5;
+              $("#grade").val(score);
+              gauge.set(stress);
             }
             break;
         }
@@ -201,22 +249,28 @@ $(document).ready(function () {
             console.log("They asked some difficult questions, but in the end you got your name out there.");
             $(".questionMsg").html("They asked some difficult questions, but in the end you got your name out there.");
             $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/3o6ZsXFATUd8muVJqE"' + gliphyEmbed + '"https://giphy.com/gifs/southparkgifs-3o6ZsXFATUd8muVJqE"></a>');
-            score += 10;
-            stress += 10;
+            score = score += 10;
+            stress = stress += 10;
+            $("#grade").val(score);
+            gauge.set(stress);
             break;
           case 'B':
             console.log("You recieve a form letter thanking you for your inquery.");
             $(".questionMsg").html("You recieve a form letter thanking you for your inquery.");
             $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/3ofSBciYEAZTGOu0V2"' + gliphyEmbed + '"https://giphy.com/gifs/spongebob-season-4-spongebob-squarepants-3ofSBciYEAZTGOu0V2"></a>');
-            score += 5;
-            stress += 5;
+            score = score += 5;
+            stress = stress += 5;
+            $("#grade").val(score);
+            gauge.set(stress);
             break;
           case 'C':
             console.log("Maybe next time");
             $(".questionMsg").html("Maybe next time");
             $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/OrnuiAcxbqYX6"' + gliphyEmbed + '"https://giphy.com/gifs/reactiongifs-OrnuiAcxbqYX6"></a>');
-            score -= 5;
-            stress -= 5;
+            score = score -= 5;
+            stress = stress -= 5;
+            $("#grade").val(score);
+            gauge.set(stress);
             break;
         }
         question++;
@@ -256,8 +310,10 @@ $(document).ready(function () {
             console.log("You only missed 1 class and you're right as rain");
             $(".questionMsg").html("You only missed 1 class and you're right as rain.");
             $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:69%;position:relative;"><iframe src="https://giphy.com/embed/3o7TKKxsoUjRiUUeas"' + gliphyEmbed + '"https://giphy.com/gifs/hulu-parks-and-recreation-nbc-3o7TKKxsoUjRiUUeas"></a>');
-            score -= 5;
-            stress -= 10;
+            score = score -= 5;
+            stress = stress -= 10;
+            $("#grade").val(score);
+            gauge.set(stress);
             console.log(score);
             console.log(stress);
             $('#questionModalNext').click(function () {
@@ -271,8 +327,10 @@ $(document).ready(function () {
               console.log("You over-exerted yourself and had to be hospitalized, missing 3 classes");
               $(".questionMsg").html("You over-exerted yourself and had to be hospitalized, missing 3 classes.");
               $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:50%;position:relative;"><iframe src="https://giphy.com/embed/PADZOft6ursY"' + gliphyEmbed + '"https://giphy.com/gifs/funny-omfg-PADZOft6ursY"></a>');
-              score -= 10;
-              stress += 15;
+              score = score -= 10;
+              stress = stress += 15;
+              $("#grade").val(score);
+              gauge.set(stress);
               console.log(score);
               console.log(stress);
               $('#questionModalNext').click(function () {
@@ -283,8 +341,10 @@ $(document).ready(function () {
               console.log("You managed to stay hydrated and made it through class.");
               $(".questionMsg").html("You managed to stay hydrated and made it through class.");
               $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:67%;position:relative;"><iframe src="https://giphy.com/embed/Djk9ilQA2jjOg"' + gliphyEmbed + '"https://giphy.com/gifs/Djk9ilQA2jjOg"></a>');
-              score += 10;
-              stress += 5;
+              score = score += 10;
+              stress = stress += 5;
+              $("#grade").val(score);
+              gauge.set(stress);
               console.log(score);
               console.log(stress);
               $('#questionModalNext').click(function () {
@@ -298,15 +358,14 @@ $(document).ready(function () {
             $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/3oz8xBKJFKAXB6JAm4"' + gliphyEmbed + '"https://giphy.com/gifs/oregon-wagon-trail-3oz8xBKJFKAXB6JAm4"></a><');
             console.log("You have died of dysentery");
             $('#questionModalNext').click(function () {
-              score -= 100;
-              stress += 100;
+              score = score -= 100;
+              stress = stress += 100;
               finalscore();
             });
         }
         question++;
       });
     }
-
 
     function question7() {
       loseConditions();
@@ -322,22 +381,28 @@ $(document).ready(function () {
             console.log("You are a coding ninja.");
             $(".questionMsg").html("You are a coding ninja.");
             $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/ukMiDlCmdv2og"' + gliphyEmbed + '"https://giphy.com/gifs/life-programmer-ukMiDlCmdv2og"></a>');
-            score += 15;
-            stress += 15;
+            score = score += 15;
+            stress = stress += 15;
+            $("#grade").val(score);
+            gauge.set(stress);
             break;
           case 'B':
             console.log("Everything is looking pretty polished now.");
             $(".questionMsg").html("Everything is looking pretty polished now.");
             $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/l2SpNQjFsQqH5kFva"' + gliphyEmbed + '"https://giphy.com/gifs/middle-school-movie-janitor-middle-school-movie-l2SpNQjFsQqH5kFva"></a>');
-            score += 5;
-            stress += 5;
+            score = score += 5;
+            stress = stress += 5;
+            $("#grade").val(score);
+            gauge.set(stress);
             break;
           case 'C':
             console.log("Well that certainly was fun. You'll be picking sand out of your belly button for weeks.");
             $(".questionMsg").html("Well that certainly was fun. You'll be picking sand out of your belly button for weeks.");
             $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/43ZlfLDPwxJLi"' + gliphyEmbed + '"https://giphy.com/gifs/fail-beach-lmao-43ZlfLDPwxJLi"></a>');
-            score -= 10;
-            stress -= 15;
+            score = score -= 10;
+            stress = stress -= 15;
+            $("#grade").val(score);
+            gauge.set(stress);
             break;
         }
         question++;
@@ -362,22 +427,28 @@ $(document).ready(function () {
             console.log("You worked your butt off, but your final project is a masterpiece");
             $(".questionMsg").html("You worked your butt off, but your final project is a masterpiece.");
             $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:76%;position:relative;"><iframe src="https://giphy.com/embed/xT5LMSleuVuCe24KLC"' + gliphyEmbed + '"https://giphy.com/gifs/season-7-the-simpsons-7x7-xT5LMSleuVuCe24KLC"></a>');
-            score += 20;
-            stress += 20;
+            score = score += 20;
+            stress = stress += 20;
+            $("#grade").val(score);
+            gauge.set(stress);
             break;
           case 'B':
             console.log("Your final project functions and looks pretty good. Good work.");
             $(".questionMsg").html("Your final project functions and looks pretty good. Good work.");
             $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/QRB6F0x3ptYHu"' + gliphyEmbed + '"https://giphy.com/gifs/day-work-home-QRB6F0x3ptYHu"></a>');
-            score += 10;
-            stress += 10;
+            score = score += 10;
+            stress = stress += 10;
+            $("#grade").val(score);
+            gauge.set(stress);
             break;
           case 'C':
             console.log("You recieve a zero for this assignment, lowering your final grade.");
             $(".questionMsg").html("You recieve a zero for this assignment, lowering your final grade.");
             $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/8EmeieJAGjvUI"' + gliphyEmbed + '"https://giphy.com/gifs/work-homer-simpson-8EmeieJAGjvUI"></a>');
-            score -= 5;
-            stress -= 5;
+            score = score -= 5;
+            stress = stress -= 5;
+            $("#grade").val(score);
+            gauge.set(stress);
             break;
         }
         question++;
