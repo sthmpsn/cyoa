@@ -61,8 +61,7 @@ hr {
 }
 
 .jumbotron {
-  margin: 80px 0px 0px 0px;
-  padding: 5px;
+  padding: 25% 0% 0% 0%;
   background: none;
 }
 
@@ -124,7 +123,7 @@ meter {
 }
 
 .score {
-  margin-top: 125px;
+  margin-top: 25px;
 }
 
 /* SCOREBOARD.HTML STYLE */
@@ -141,7 +140,7 @@ meter {
 
 #sb-container {
   align-content: center;
-  margin-top: 45px;
+  margin-top: 5px;
 }
 
 #subtitles {
@@ -166,7 +165,7 @@ meter {
 
 /* MEDIA QUERIES */
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 1px) {
   #login {
     margin-top: 150px;
   }
@@ -174,13 +173,21 @@ meter {
     background: none;
     border: none;
   }
+    .jumbotron {
+    margin-top: 5%;
+  }
   .question {
-    font-size: 2em;
+    font-size: 1em;
   }
 }
 
 @media screen and (min-width: 768px) {
-
+  .jumbotron {
+    margin-top: 0%;
+  }
+  .question {
+    font-size: 1em;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -188,15 +195,18 @@ meter {
     background-size: contain;
   }
   #login {
-    margin-top: 200px;
+    margin-top: 0%;
   }
-  .jumbotron {
-    margin: 80px 25px 0px 25px;
+  .question {
+    font-size: 1.2em;
   }
 }
 
 @media screen and (min-width: 1200px){
-  .jumbotron {
-    margin: 80px 100px 0px 100px;
+  .question {
+    font-size: 1.5em;
+  }
+  .btn {
+    font-size: 1.5em;
   }
 }
