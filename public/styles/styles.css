@@ -56,10 +56,8 @@ hr {
   background-image: url("../images/bg-classroom.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center top;
-  background-size: 175%;
+  background-position: center;
   border: 1px solid #ddd;
-  background-color: #222;
 }
 
 .jumbotron {
@@ -151,19 +149,20 @@ meter {
 }
 
 .modal-content {
-  background-color: slategray;
+  background-color: #C0C0C0;
 }
 .gold{
   color: #f7e27b;
 }
 
 .silver{
-  color: silver;
+  color: slategrey;
 }
 
 .bronze{
-  color: #dfa98c;
+  color: #cd7f32;
 }
+
 
 /* MEDIA QUERIES */
 
