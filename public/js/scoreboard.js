@@ -12,7 +12,7 @@ $(document).ready(function () {
   var gliphyEmbed = ' width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><a href=';
 
   function saveScoreFinal() {
-    debugger;
+    //get user's current highscore for comparison
     $.ajax({
       method: "GET",
       url: "/api/users/" + user
@@ -22,6 +22,7 @@ $(document).ready(function () {
       highestScore = result.highScore;
       highestStress = result.highStress;
       console.log(result);
+      //change modal text/image based on if the user passed, failed, or stressed out
       if (score <= 0) {
         $('#questionModal').modal('show');
         $(".questionMsg").html("You have flunked out of class.")
@@ -35,6 +36,7 @@ $(document).ready(function () {
         $(".questionMsg").html("You did it! You have graduated from the bootcamp!")
         $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:114%;position:relative;"><iframe src="https://giphy.com/embed/3oEduUGL2JaSK7oS76"' + gliphyEmbed + '"https://giphy.com/gifs/jimmy-fallon-graduation-dwane-johnson-3oEduUGL2JaSK7oS76">via GIPHY</a></p>');
       }
+      //only update highscore on db if new score is higher than previous highscore
       if (score > highestScore) {
         var data = {
           currentScore: 20,
@@ -70,35 +72,7 @@ $(document).ready(function () {
       }
     });
   }
-
-  // function finalResult() {
-  //   $.ajax({
-  //     method: "GET",
-  //     url: "/api/users/" + user
-  //   }).then(function (result) {
-  //     score = result.currentScore;
-  //     stress = result.currentStress;
-  //     highScore = result.highScore;
-  //     highStress = result.highStress;
-
-  //     if (score <= 0) {
-  //       $('#questionModal').modal('show');
-  //       $(".questionMsg").html("You have flunked out of class.")
-  //       $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/10h8CdMQUWoZ8Y"' + gliphyEmbed + '"https://giphy.com/gifs/someone-idea-lurker-10h8CdMQUWoZ8Y"></a>');
-  //     } else if (stress >= 50) {
-  //       $('#questionModal').modal('show');
-  //       $(".questionMsg").html("You cracked under the pressure!")
-  //       $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/69warOL5MBhyzjAMov"' + gliphyEmbed + '"https://giphy.com/gifs/reaction-69warOL5MBhyzjAMov"></a>');
-  //     } else {
-  //       $('#questionModal').modal('show');
-  //       $(".questionMsg").html("You did it! You have graduated from the bootcamp!")
-  //       $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:114%;position:relative;"><iframe src="https://giphy.com/embed/3oEduUGL2JaSK7oS76"' + gliphyEmbed + '"https://giphy.com/gifs/jimmy-fallon-graduation-dwane-johnson-3oEduUGL2JaSK7oS76">via GIPHY</a></p>');
-  //     }
-  //   });
-  // }
-  // GET a request to the /scoreboard route and return the list of users in rank of highest to lowest score
-  // Limit to top 10 users
-
+  //display scoreboard by highscore (top 10)
   function updatedScoreboard() {
     $.ajax({
       method: "GET",
