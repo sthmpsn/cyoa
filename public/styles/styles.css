@@ -61,7 +61,8 @@ hr {
 }
 
 .jumbotron {
-  padding: 25% 0% 0% 0%;
+  margin: 80px 0px 0px 0px;
+  padding: 5px;
   background: none;
 }
 
@@ -123,7 +124,7 @@ meter {
 }
 
 .score {
-  margin-top: 25px;
+  margin-top: 125px;
 }
 
 /* SCOREBOARD.HTML STYLE */
@@ -140,7 +141,7 @@ meter {
 
 #sb-container {
   align-content: center;
-  margin-top: 5px;
+  margin-top: 45px;
 }
 
 #subtitles {
@@ -148,24 +149,23 @@ meter {
 }
 
 .modal-content {
-  background-color: #C0C0C0;
+  background-color: slategray;
 }
 .gold{
   color: #f7e27b;
 }
 
 .silver{
-  color: slategrey;
+  color: silver;
 }
 
 .bronze{
-  color: #cd7f32;
+  color: #dfa98c;
 }
-
 
 /* MEDIA QUERIES */
 
-@media screen and (min-width: 1px) {
+@media screen and (min-width: 576px) {
   #login {
     margin-top: 150px;
   }
@@ -173,21 +173,13 @@ meter {
     background: none;
     border: none;
   }
-    .jumbotron {
-    margin-top: 5%;
-  }
   .question {
-    font-size: 1em;
+    font-size: 2em;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .jumbotron {
-    margin-top: 0%;
-  }
-  .question {
-    font-size: 1em;
-  }
+
 }
 
 @media screen and (min-width: 992px) {
@@ -195,18 +187,15 @@ meter {
     background-size: contain;
   }
   #login {
-    margin-top: 0%;
+    margin-top: 200px;
   }
-  .question {
-    font-size: 1.2em;
+  .jumbotron {
+    margin: 80px 25px 0px 25px;
   }
 }
 
 @media screen and (min-width: 1200px){
-  .question {
-    font-size: 1.5em;
-  }
-  .btn {
-    font-size: 1.5em;
+  .jumbotron {
+    margin: 80px 100px 0px 100px;
   }
 }
