@@ -63,8 +63,6 @@ $(document).ready(function() {
       },
       success: function(data, textStatus, jqXHR) {
         //model shows new user added + username
-        $("#loginMsg").append("Successfully added User: " + newUser.username);
-        $("#loginModal").show();
         console.log("jqXHR Contents:\n");
         console.log(jqXHR);
       }
