@@ -61,8 +61,8 @@ hr {
 }
 
 .jumbotron {
-  margin: 80px 0px 0px 0px;
-  padding: 5px;
+  margin: 105px 0px 0px;
+  padding: 0px;
   background: none;
 }
 
@@ -176,10 +176,15 @@ meter {
   .question {
     font-size: 2em;
   }
+  .jumbotron {
+    margin: 105px 0px 0px;
+  }
 }
 
 @media screen and (min-width: 768px) {
-
+  .jumbotron {
+    margin: 105px 0px 0px;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -189,13 +194,13 @@ meter {
   #login {
     margin-top: 200px;
   }
-  .jumbotron {
-    margin: 80px 25px 0px 25px;
-  }
 }
 
 @media screen and (min-width: 1200px){
+  #login {
+    margin-top: 250px;
+  }
   .jumbotron {
-    margin: 80px 100px 0px 100px;
+    margin: 105px 25px 0px;
   }
 }
