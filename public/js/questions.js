@@ -6,6 +6,7 @@ $(document).ready(function () {
   }
   console.log(localStorage.getItem("username"));
   var user = localStorage.getItem("username");
+  var userName = (user.charAt(0).toUpperCase() + user.slice(1));
   //based on the current user, we need to load in the users stats as our starting values for the game
   $.ajax({
     method: "GET",
@@ -19,6 +20,7 @@ $(document).ready(function () {
     //make displays correct
     $("#stress-display").html(stress);
     $("#grade-display").html(score);
+    $("#user-name").html(userName); 
 
     // STRESS GAUGE
     var opts = {
@@ -59,8 +61,8 @@ $(document).ready(function () {
     function question1() {
       loseConditions();
       $('.currentQuestion').html('<h4 class="question">It&apos;s the first day of class. You&apos;re a little nervous. Some funny cat videos might help you relax.');
-      $('.currentQuestion').append('<button id="youtube"' + modalFadeButton);
-      $('.currentQuestion').append('<br><button id="vsc"' + modalFadeButton);
+      $('.currentQuestion').append('<button id="youtube"' + modalFadeButton + '</button>  Relax on YouTube');
+      $('.currentQuestion').append('<br><button id="vsc"' + modalFadeButton + '</button>  Pay attention to class');
       $('.answer').click(function () {
         var userChoice = this.id;
         if (userChoice === 'youtube') {
