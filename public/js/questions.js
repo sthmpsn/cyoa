@@ -283,11 +283,28 @@ $(document).ready(function () {
 
     function question5() {
       loseConditions();
-      $('.currentQuestion').html('<h4 class="question">Find the bugs.');
-      $('.currentQuestion').append('<button id="A" class="answer btn" data-toggle="modal" data-target="#questionModal" data-backdrop="static" data-keyboard="false">This is where the picture will go');
-      $('.answer').click(function () {
-        $(".questionMsg").html("You found them all!")
+      $('.currentQuestion').html('<h4 class="question">Find the bug.');
+      $('.currentQuestion').append('<img src="images/debug.png" align="middle" usemap="#image-map">');
+      $('.currentQuestion').append('<map name="image-map"><area id="meta" alt="Bug?" coords="70,54,250,77" shape="rect"><area id="no-end" alt="Bug?" coords="341,186,381,211" shape="rect"><area id="span" alt="Bug?" coords="102,207,175,230" shape="rect"><area id="source" alt="Bug?" coords="139,285,365,309" shape="rect"><area id="img" alt="Bug?" coords="449,279,498,311" shape="rect"></map>');
+      $('#img').click(function () {
+        $(".questionMsg").html("You found the bug!")
         $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:194%;position:relative;"><iframe src="https://giphy.com/embed/11ZSwQNWba4YF2"' + gliphyEmbed + '"https://giphy.com/gifs/loop-work-programmer-11ZSwQNWba4YF2">via GIPHY</a></p>');
+        question++;
+      });
+      $('#meta').click(function() {
+        $(".questionMsg").html("WRONG!")
+        question++;
+      });
+      $('#no-end').click(function() {
+        $(".questionMsg").html("WRONG!")
+        question++;
+      });
+      $('#span').click(function() {
+        $(".questionMsg").html("WRONG!")
+        question++;
+      });
+      $('#source').click(function() {
+        $(".questionMsg").html("WRONG!")
         question++;
       });
       $('#questionModalNext').click(function () {
