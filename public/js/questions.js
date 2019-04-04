@@ -285,11 +285,57 @@ $(document).ready(function () {
 
     function question5() {
       loseConditions();
-      $('.currentQuestion').html('<h4 class="question">Find the bugs.');
-      $('.currentQuestion').append('<button id="A" class="answer btn" data-toggle="modal" data-target="#questionModal" data-backdrop="static" data-keyboard="false">This is where the picture will go');
-      $('.answer').click(function () {
-        $(".questionMsg").html("You found them all!")
-        $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:194%;position:relative;"><iframe src="https://giphy.com/embed/11ZSwQNWba4YF2"' + gliphyEmbed + '"https://giphy.com/gifs/loop-work-programmer-11ZSwQNWba4YF2">via GIPHY</a></p>');
+      $('.currentQuestion').html('<h4 class="question">Find the bug.');
+      $('.currentQuestion').append('<img src="images/debug.png" align="middle" usemap="#image-map">');
+      $('.currentQuestion').append('<map name="image-map"><area id="meta" alt="Bug?" coords="70,54,250,77" shape="rect"><area id="no-end" alt="Bug?" coords="341,186,381,211" shape="rect"><area id="span" alt="Bug?" coords="102,207,175,230" shape="rect"><area id="source" alt="Bug?" coords="139,285,365,309" shape="rect"><area id="img" alt="Bug?" coords="449,279,498,311" shape="rect"></map>');
+      $('#img').click(function () {
+        $('#questionModal').modal("show");
+        $(".questionMsg").html("You found the bug!");
+        $('#questionFlavor').html('<div style="width:100%;height:0;padding-bottom:89%;position:relative;"><iframe src="https://giphy.com/embed/PS7d4tm1Hq6Sk" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/chris-farley-funny-comedy-PS7d4tm1Hq6Sk"></a>');
+        score = score += 10;
+        stress = stress -= 5;
+        $("#grade").val(score);
+        gauge.set(stress);
+        question++;
+      });
+      $('#meta').click(function() {
+        $('#questionModal').modal("show");
+        $(".questionMsg").html("WRONG!");
+        $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/l4pLY0zySvluEvr0c"' + gliphyEmbed + '"https://giphy.com/gifs/hells-kitchen-kitchen-hellskitchen-l4pLY0zySvluEvr0c"></a>');
+        score = score -= 5;
+        stress = stress -= 5;
+        $("#grade").val(score);
+        gauge.set(stress);
+        question++;
+      });
+      $('#no-end').click(function() {
+        $('#questionModal').modal("show");
+        $(".questionMsg").html("WRONG!");
+        $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/l4pLY0zySvluEvr0c"' + gliphyEmbed + '"https://giphy.com/gifs/hells-kitchen-kitchen-hellskitchen-l4pLY0zySvluEvr0c"></a>');
+        score = score -= 5;
+        stress = stress -= 5;
+        $("#grade").val(score);
+        gauge.set(stress);
+        question++;
+      });
+      $('#span').click(function() {
+        $('#questionModal').modal("show");
+        $(".questionMsg").html("WRONG!");
+        $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/l4pLY0zySvluEvr0c"' + gliphyEmbed + '"https://giphy.com/gifs/hells-kitchen-kitchen-hellskitchen-l4pLY0zySvluEvr0c"></a>');
+        score = score -= 5;
+        stress = stress -= 5;
+        $("#grade").val(score);
+        gauge.set(stress);
+        question++;
+      });
+      $('#source').click(function() {
+        $('#questionModal').modal("show");
+        $(".questionMsg").html("WRONG!");
+        $("#questionFlavor").html('<div style="width:100%;height:0;padding-bottom:56%;position:relative;"><iframe src="https://giphy.com/embed/l4pLY0zySvluEvr0c"' + gliphyEmbed + '"https://giphy.com/gifs/hells-kitchen-kitchen-hellskitchen-l4pLY0zySvluEvr0c"></a>');
+        score = score -= 5;
+        stress = stress -= 5;
+        $("#grade").val(score);
+        gauge.set(stress);
         question++;
       });
       $('#questionModalNext').click(function () {
