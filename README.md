@@ -1,5 +1,5 @@
-# Web-Dev-Alliance
-Project 2
+# CYOA
+Choose your own adventure game
 
 # Project Description
 The application is a create-your-own-adventure-style game with coding bootcamp/academic theme.  We wanted to create a basic text-based game where users could create an account complete with password and input validation.  The game would consist of a series of questions, where the user's answer to the question would determine how their score and stress levels change, indicated by gauges.
