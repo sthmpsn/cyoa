@@ -7,7 +7,8 @@ The application is a create-your-own-adventure-style game with coding bootcamp/a
 # Deployed App:
 https://cyoa-bc.herokuapp.com/
 
-# https://docs.google.com/presentation/d/1XN0RQEjUMF6HD9x8cIKy_Av5s_HEhqDan5qWo6zUXkc/edit?usp=sharing
+# Presentation
+https://docs.google.com/presentation/d/1XN0RQEjUMF6HD9x8cIKy_Av5s_HEhqDan5qWo6zUXkc/edit?usp=sharing
 
 # Technologies Used
 * HTML
@@ -26,8 +27,6 @@ https://cyoa-bc.herokuapp.com/
 * Gauge.js
 
 # Roles
-## Project Manager/Concept:
-* Scott
 
 ## Front End:
 * Bryan
@@ -50,3 +49,10 @@ https://cyoa-bc.herokuapp.com/
 * New Technology
 * Polished Front-End UI
 * Good coding standards (indentations, variable names (i.e camelCase))
+
+# Contributors
+* Steve Thompson
+* John Evans
+* Bryan Bloomquist
+* Ashlen Bruns
+* Scott Anderson
