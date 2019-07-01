@@ -26,7 +26,9 @@ https://docs.google.com/presentation/d/1XN0RQEjUMF6HD9x8cIKy_Av5s_HEhqDan5qWo6zU
 
 ## Screenshots
 <img src="design/screenshots/01-login.jpg" width="250" alt="login">
-
+<img src="design/screenshots/02-newUser.jpg" width="250" alt="newUser">
+<img src="design/screenshots/03-adventure.jpg" width="250" alt="adventure">
+<img src="design/screenshots/04-scoreboard.jpg" width="250" alt="scoreboard">
 
 ## Contributors
 * Ashlen Bruns (ashlenbruns)
