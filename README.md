@@ -1,16 +1,14 @@
 # CYOA
-Choose your own adventure game
 
-# Project Description
-The application is a create-your-own-adventure-style game with coding bootcamp/academic theme.  We wanted to create a basic text-based game where users could create an account complete with password and input validation.  The game would consist of a series of questions, where the user's answer to the question would determine how their score and stress levels change, indicated by gauges.
+A Choose Your Own Adventure game with a coding boot camp theme.  We wanted to create a basic text-based game where users could create an account complete with password and input validation.  The game would consist of a series of questions, where the user's answer to the question would determine how their score and stress levels change, indicated by gauges.
 
-# Deployed App:
+## Deployed Application:
 https://cyoa-bc.herokuapp.com/
 
-# Presentation
+## Presentation
 https://docs.google.com/presentation/d/1XN0RQEjUMF6HD9x8cIKy_Av5s_HEhqDan5qWo6zUXkc/edit?usp=sharing
 
-# Technologies Used
+## Technologies
 * HTML
 * CSS
 * Bootstrap
@@ -26,33 +24,13 @@ https://docs.google.com/presentation/d/1XN0RQEjUMF6HD9x8cIKy_Av5s_HEhqDan5qWo6zU
 * JawsDB
 * Gauge.js
 
-# Roles
+## Screenshots
+<img src="design/screenshots/01-login.jpg" width="250" alt="login">
 
-## Front End:
-* Bryan
-* Ashlen
 
-## Back End:
-* John
-* Steve
-* Scott
-* Ashlen
-
-## Database:
-* John
-* Steve
-
-# MVC/Requirements:
-* Question-based game
-* Backed by MySQL
-* Backed by Sequelize or another similar ORM
-* New Technology
-* Polished Front-End UI
-* Good coding standards (indentations, variable names (i.e camelCase))
-
-# Contributors
-* Steve Thompson
-* John Evans
-* Bryan Bloomquist
-* Ashlen Bruns
-* Scott Anderson
+## Contributors
+* Ashlen Bruns (ashlenbruns)
+* Scott Anderson (ScottTAnderson)
+* Bryan Bloomquist (bryanbloomquist)
+* John Evans (evanjo03)
+* Steve Thompson (sthmpsn)
